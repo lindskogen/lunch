@@ -10,7 +10,7 @@ const fetchHTML = url =>
     .then(r => r.text())
     .then(r => cheerio.load(r));
 
-module.exports.fetchAll = async () => {
+export const fetchAll = async () => {
   const hops = fetchHTML("http://www.hopsbar.se/").then(parseHops);
   const seaside = fetchHTML("http://seaside.kvartersmenyn.se/").then(
     parseSeaside

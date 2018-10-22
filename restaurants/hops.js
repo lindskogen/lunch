@@ -34,5 +34,5 @@ module.exports.parseHtml = $ => {
         }));
     });
 
-  return { name: "Hops", days: menus };
+  return { name: "Hops", days: _.flatten(menus) };
 };
