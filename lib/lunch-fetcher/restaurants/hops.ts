@@ -1,10 +1,9 @@
-const _ = require("lodash");
-const { isWeekday, isNotNull, isNotZero, id } = require("../lib/utils");
+import _ from "lodash";
+import { isWeekday, isNotNull, isNotZero, id } from "../lib/utils";
 
-const url = "http://www.hopsbar.se/";
-module.exports.url = url;
+export const url = "http://www.hopsbar.se/";
 
-module.exports.parseHtml = $ => {
+export const parseHtml = ($: CheerioStatic): Restaurant => {
   const menus = $("#Veckansmeny")
     .toArray()
     .map(item => {
@@ -32,7 +31,7 @@ module.exports.parseHtml = $ => {
       return days
         .filter(([wday]) => isWeekday(wday))
         .map(([wday, ...foods]) => ({
-          wday,
+          wday: wday as WeekDay,
           items: _.take(foods.map(food => ({ name: food.trim() })), 2)
         }));
     });

@@ -1,10 +1,9 @@
-const _ = require("lodash");
-const { isWeekday, isNotNull, isNotZero } = require("../lib/utils");
+import _ from "lodash";
+import { isWeekday, isNotNull, isNotZero } from "../lib/utils";
 
-const url = "http://seaside.kvartersmenyn.se/";
-module.exports.url = url;
+export const url = "http://seaside.kvartersmenyn.se/";
 
-module.exports.parseHtml = $ => {
+export const parseHtml = ($: CheerioStatic): Restaurant => {
   const menus = $(".day .meny")
     .toArray()
     .map(item => {
@@ -29,18 +28,20 @@ module.exports.parseHtml = $ => {
       return days
         .filter(([wday]) => isWeekday(wday))
         .map(([wday, ...foods]) => {
-          const parsedFoods = foods.map(food => {
-            const res = /^([A-Ö]+( [0-9])?) ?:?([^0-9]*)/.exec(food);
-            if (res) {
-              const [all, title, number, name] = res;
-              return { title, name: name.trim() };
-            } else {
-              return null;
-            }
-          });
+          const parsedFoods = foods
+            .map(food => {
+              const res = /^([A-Ö]+( [0-9])?) ?:?([^0-9]*)/.exec(food);
+              if (res) {
+                const [all, title, number, name] = res;
+                return { title, name: name.trim() };
+              } else {
+                return null;
+              }
+            })
+            .filter(isNotNull);
 
           return {
-            wday,
+            wday: wday as WeekDay,
             items: parsedFoods
           };
         });
