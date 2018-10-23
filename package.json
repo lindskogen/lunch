@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@zeit/next-typescript": "^1.1.1",
     "cheerio": "^1.0.0-rc.2",
     "lodash": "^4.17.11",
     "next": "^7.0.2",
