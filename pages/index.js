@@ -53,9 +53,16 @@ export default class extends React.Component {
               {showToday ? "Visa hela veckans meny" : "Visa idag"}
             </button>
           )}
-          {restaurants.map(({ days, name }) => (
+          {restaurants.map(({ url, days, name }) => (
             <div key={name}>
-              <h2>{name}</h2>
+              <a
+                href={url}
+                rel="noopener noreferrer"
+                target="_blank"
+                className="link underline black hover-blue"
+              >
+                <h2>{name}</h2>
+              </a>
               {onlyShowToday
                 ? this.renderDay(
                     days.find(({ wday }) => wday.toLowerCase() === weekDayToday)

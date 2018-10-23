@@ -1,6 +1,9 @@
 const _ = require("lodash");
 const { isWeekday, isNotNull, isNotZero } = require("../lib/utils");
 
+const url = "http://seaside.kvartersmenyn.se/";
+module.exports.url = url;
+
 module.exports.parseHtml = $ => {
   const menus = $(".day .meny")
     .toArray()
@@ -43,5 +46,5 @@ module.exports.parseHtml = $ => {
         });
     });
 
-  return { name: "Seaside", days: _.flatten(menus) };
+  return { name: "Seaside", url, days: _.flatten(menus) };
 };

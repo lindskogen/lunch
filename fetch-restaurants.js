@@ -2,8 +2,11 @@ const fetch = require("node-fetch");
 const cheerio = require("cheerio");
 const _ = require("lodash");
 
-const { parseHtml: parseSeaside } = require("./restaurants/seaside");
-const { parseHtml: parseHops } = require("./restaurants/hops");
+const {
+  url: seasideUrl,
+  parseHtml: parseSeaside
+} = require("./restaurants/seaside");
+const { url: hopsUrl, parseHtml: parseHops } = require("./restaurants/hops");
 
 const fetchHTML = url =>
   fetch(url)
@@ -11,9 +14,7 @@ const fetchHTML = url =>
     .then(r => cheerio.load(r));
 
 export const fetchAll = async () => {
-  const hops = fetchHTML("http://www.hopsbar.se/").then(parseHops);
-  const seaside = fetchHTML("http://seaside.kvartersmenyn.se/").then(
-    parseSeaside
-  );
+  const hops = fetchHTML(hopsUrl).then(parseHops);
+  const seaside = fetchHTML(seasideUrl).then(parseSeaside);
   return await Promise.all([hops, seaside]);
 };
