@@ -42,7 +42,7 @@ export default class extends React.Component<Props, State> {
     return (
       <>
         <Head />
-        <main className="sans-serif mt2 ml2">
+        <main className="sans-serif ma2">
           {weekDayToday && (
             <button onClick={this.toggleShowToday}>
               {showToday ? "Visa hela veckans meny" : "Visa idag"}
