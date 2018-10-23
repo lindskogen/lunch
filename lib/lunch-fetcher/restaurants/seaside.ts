@@ -1,4 +1,4 @@
-import _ from "lodash";
+import * as _ from "lodash";
 import { isWeekday, isNotNull, isNotZero } from "../lib/utils";
 
 export const url = "http://seaside.kvartersmenyn.se/";
@@ -30,9 +30,9 @@ export const parseHtml = ($: CheerioStatic): Restaurant => {
         .map(([wday, ...foods]) => {
           const parsedFoods = foods
             .map(food => {
-              const res = /^([A-Ö]+( [0-9])?) ?:?([^0-9]*)/.exec(food);
+              const res = /^([A-Ö]+( [0-9])?) ?:?([^0-9:]*)/.exec(food);
               if (res) {
-                const [all, title, number, name] = res;
+                const [, title, , name] = res;
                 return { title, name: name.trim() };
               } else {
                 return null;

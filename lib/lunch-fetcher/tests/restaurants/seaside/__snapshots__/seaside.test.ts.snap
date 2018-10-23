@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`seaside when provided with mock 1 should work 1`] = `
+Object {
+  "days": Array [
+    Object {
+      "items": Array [
+        Object {
+          "name": "Isterband med dillstuvad potatis, picklade rödbetor och hemgjord senap",
+          "title": "DAGENS 1",
+        },
+        Object {
+          "name": "Het chiligryta med nötfärs, bönor och paprika samt picklad rödlök, crème fraiche och ris",
+          "title": "DAGENS 2",
+        },
+        Object {
+          "name": "Dagens pasta",
+          "title": "PASTA",
+        },
+        Object {
+          "name": "Rödbetsgryta med fullkornsbulgur och chèvreklick",
+          "title": "VEGETARISK",
+        },
+        Object {
+          "name": "Välj ditt eget protein och plocka resten ifrån vår stora salladsbuffé",
+          "title": "SALLAD",
+        },
+        Object {
+          "name": "Hamburgare med ost, pommes frites, saltgurka och tillbehör",
+          "title": "GRILL",
+        },
+      ],
+      "wday": "Måndag",
+    },
+    Object {
+      "items": Array [
+        Object {
+          "name": "Stekt fläsk med bruna bönor eller löksås serveras med kokt potatis",
+          "title": "DAGENS 1",
+        },
+        Object {
+          "name": "Mandel och fröpanerad sejfilé med curryrostad blomkål och spenatsallad",
+          "title": "DAGENS 2",
+        },
+        Object {
+          "name": "Dagens pasta",
+          "title": "PASTA",
+        },
+        Object {
+          "name": "Rödbetsgryta med fullkornsbulgur och chèvreklick",
+          "title": "VEGETARISK",
+        },
+        Object {
+          "name": "Välj ditt eget protein och plocka resten ifrån vår stora salladsbuffé",
+          "title": "SALLAD",
+        },
+        Object {
+          "name": "Hamburgare med ost, pommes frites, saltgurka och tillbehör",
+          "title": "GRILL",
+        },
+      ],
+      "wday": "Tisdag",
+    },
+    Object {
+      "items": Array [
+        Object {
+          "name": "Panerad torskfilé med skarpsås, dillslungad potatis och citron",
+          "title": "DAGENS 1",
+        },
+        Object {
+          "name": "Adobokryddad kyckling med karibisk bönsallad och rostad potatis",
+          "title": "DAGENS 2",
+        },
+        Object {
+          "name": "Dagens pasta",
+          "title": "PASTA",
+        },
+        Object {
+          "name": "Rödbetsgryta med fullkornsbulgur och chèvreklick",
+          "title": "VEGETARISK",
+        },
+        Object {
+          "name": "Välj ditt eget protein och plocka resten ifrån vår stora salladsbuffé",
+          "title": "SALLAD",
+        },
+        Object {
+          "name": "Hamburgare med ost, pommes frites, saltgurka och tillbehör",
+          "title": "GRILL",
+        },
+      ],
+      "wday": "Onsdag",
+    },
+    Object {
+      "items": Array [
+        Object {
+          "name": "Ärtsoppa med fläsk och korv samt pannkakor med sylt och vispad grädde",
+          "title": "DAGENS 1",
+        },
+        Object {
+          "name": "Nötfärsbiff med karamelliserad lök, rödvinssås, gelé och stekt potatis",
+          "title": "DAGENS 2",
+        },
+        Object {
+          "name": "Dagens pasta",
+          "title": "PASTA",
+        },
+        Object {
+          "name": "Rostade grönsaker med libanesisk kryddning, matvete och hummus",
+          "title": "VEGETARISK",
+        },
+        Object {
+          "name": "Välj ditt eget protein och plocka resten ifrån vår stora salladsbuffé",
+          "title": "SALLAD",
+        },
+        Object {
+          "name": "Hamburgare med ost, pommes frites, saltgurka och tillbehör",
+          "title": "GRILL",
+        },
+      ],
+      "wday": "Torsdag",
+    },
+    Object {
+      "items": Array [
+        Object {
+          "name": "Helstekt fläskfilé med råstekt potatis, pepparsås och haricots verts",
+          "title": "DAGENS 1",
+        },
+        Object {
+          "name": "Panerad rödspätta med skaldjursmajonnäs, citron och dillslungad potatis",
+          "title": "DAGENS 2",
+        },
+        Object {
+          "name": "Dagens pasta",
+          "title": "PASTA",
+        },
+        Object {
+          "name": "Rostade grönsaker med libanesisk kryddning, matvete och hummus",
+          "title": "VEGETARISK",
+        },
+        Object {
+          "name": "Välj ditt eget protein och plocka resten ifrån vår stora salladsbuffé",
+          "title": "SALLAD",
+        },
+        Object {
+          "name": "Hamburgare med ost, pommes frites, saltgurka och tillbehör",
+          "title": "GRILL",
+        },
+      ],
+      "wday": "Fredag",
+    },
+  ],
+  "name": "Seaside",
+  "url": "http://seaside.kvartersmenyn.se/",
+}
+`;

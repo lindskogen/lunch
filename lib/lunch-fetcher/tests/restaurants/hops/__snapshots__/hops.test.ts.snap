@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`hops when provided with mock 1 should work 1`] = `
+Object {
+  "days": Array [
+    Object {
+      "items": Array [
+        Object {
+          "name": "Klassisk Wallenbergare med skirat smör samt potatismos.",
+        },
+        Object {
+          "name": "Panerad vittring med kräft- och västerbottenkräm, citron samt kokt potatis och citron",
+        },
+      ],
+      "wday": "Måndag",
+    },
+    Object {
+      "items": Array [
+        Object {
+          "name": "Stekt fläsk med raggmunkar och lingon alternativt löksås och kokt potatis.",
+        },
+        Object {
+          "name": "Kokt torskfilé med citron och salladslöksås serveras med chili frästa räkor samt potatismos",
+        },
+      ],
+      "wday": "Tisdag",
+    },
+    Object {
+      "items": Array [
+        Object {
+          "name": "Viltskav med smörstekta kantareller och lök, rårörda lingon samt potatismos.",
+        },
+        Object {
+          "name": "Stekt panerad sejfilé med vitlök och saffranssmakande räkröra samt dill, citron och kokt potatis.",
+        },
+      ],
+      "wday": "Onsdag",
+    },
+    Object {
+      "items": Array [
+        Object {
+          "name": "Kokt Oxbringa med rotmos och pepparrotssås.",
+        },
+        Object {
+          "name": "Stekt kummel med räkor, pepparrot, brynt smör och gröna ärtor serveras med kokt potatis",
+        },
+      ],
+      "wday": "Torsdag",
+    },
+    Object {
+      "items": Array [
+        Object {
+          "name": "Schnitzel med svampsås samt stekt potatis.",
+        },
+        Object {
+          "name": "Gravad lax med dillstuvad potatis samt hovmästarsås.",
+        },
+        Object {
+          "name": "Efterrätt ingår i alla dagens rätter.",
+        },
+      ],
+      "wday": "Fredag",
+    },
+  ],
+  "name": "Hops",
+  "url": "http://www.hopsbar.se/",
+}
+`;

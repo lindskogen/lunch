@@ -1,4 +1,4 @@
-import _ from "lodash";
+import * as _ from "lodash";
 import { isWeekday, isNotNull, isNotZero, id } from "../lib/utils";
 
 export const url = "http://www.hopsbar.se/";
@@ -12,7 +12,9 @@ export const parseHtml = ($: CheerioStatic): Restaurant => {
           .text()
           .trim()
           .split(/\n/)
-      ).filter(id);
+      )
+        .map(s => s.trim())
+        .filter(id);
 
       const splitIndexes = allNodes
         .map((text, index) => (isWeekday(text) ? index : null))
@@ -30,10 +32,14 @@ export const parseHtml = ($: CheerioStatic): Restaurant => {
 
       return days
         .filter(([wday]) => isWeekday(wday))
-        .map(([wday, ...foods]) => ({
-          wday: wday as WeekDay,
-          items: _.take(foods.map(food => ({ name: food.trim() })), 2)
-        }));
+        .map(([wday, ...foods]) => {
+          const items = foods.map(food => ({ name: food.trim() }));
+
+          return {
+            wday: wday as WeekDay,
+            items: _.takeWhile(items, ({ name }) => name !== "Veckans rätter")
+          };
+        });
     });
 
   return { name: "Hops", url, days: _.flatten(menus) };
