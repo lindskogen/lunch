@@ -28,17 +28,18 @@ export const parseHtml = ($: CheerioStatic): Restaurant => {
       return days
         .filter(([wday]) => isWeekday(wday))
         .map(([wday, ...foods]) => {
-          const parsedFoods = foods
-            .map(food => {
-              const res = /^([A-Ö]+( [0-9])?) ?:?([^0-9:]*)/.exec(food);
-              if (res) {
-                const [, title, , name] = res;
-                return { title, name: name.trim() };
-              } else {
-                return null;
-              }
-            })
-            .filter(isNotNull);
+          const foodsRegex = /^([A-Ö]+( [0-9])?) ?[\n :]([^0-9:\n]+)/gm;
+
+          const allFoodsForWeekDay = foods.join("\n");
+
+          const parsedFoods = [];
+
+          let res = foodsRegex.exec(allFoodsForWeekDay);
+          while (res !== null) {
+            const [, title, , name] = res;
+            parsedFoods.push({ title, name: name.trim() });
+            res = foodsRegex.exec(allFoodsForWeekDay);
+          }
 
           return {
             wday: wday as WeekDay,
