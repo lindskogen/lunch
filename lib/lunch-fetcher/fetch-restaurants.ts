@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+import "isomorphic-unfetch";
 import * as cheerio from "cheerio";
 
 import {

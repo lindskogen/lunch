@@ -13,9 +13,9 @@
     "@zeit/next-typescript": "^1.1.1",
     "cheerio": "^1.0.0-rc.2",
     "encoding": "^0.1.12",
+    "isomorphic-unfetch": "^3.0.0",
     "lodash": "^4.17.11",
     "next": "^7.0.2",
-    "node-fetch": "^2.3.0",
     "react": "16.7.0",
     "react-dom": "16.7.0"
   },
