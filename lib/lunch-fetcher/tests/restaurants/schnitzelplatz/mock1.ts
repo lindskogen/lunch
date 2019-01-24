@@ -1,0 +1,27 @@
+export default `<div class="content-wrapper">
+<div class="textblock section-padding--medium blockwidth--small text-align-center">
+      <h4 style="text-align: center;">Veckans schnitzel</h4>
+<p style="text-align: center;">Fläskschnitzel med svampsås, stekt svamp &amp; senapsslungad potatis</p>
+<p style="text-align: center;">105:-</p>
+<h4 style="text-align: center;">Soppa</h4>
+<p style="text-align: center;">Potatis och purjolökssoppa med smetana</p>
+<p style="text-align: center;">95:-</p>
+<h4 style="text-align: center;">Veckans vegetariska</h4>
+<p style="text-align: center;">Kikärtsplättar, sötpotatis, rostad aioli, machesallad och citron</p>
+<p style="text-align: center;">95:-</p>
+<h4 style="text-align: center;">Måndag</h4>
+<p style="text-align: center;">Dagens fångst med rödbetor, brynt smör, kokt potatis och pepparrot</p>
+<p style="text-align: center;">105:-</p>
+<h4 style="text-align: center;">Tisdag</h4>
+<p style="text-align: center;">Dagens fångst med äggsås, krispigt bacon och potatisstomp</p>
+<p style="text-align: center;">105:-</p>
+<h4 style="text-align: center;">Onsdag</h4>
+<p style="text-align: center;">Dagens fångst med bakad kål, lingonkräm och rostad potatis</p>
+<p style="text-align: center;">105:-</p>
+<h4 style="text-align: center;">Torsdag</h4>
+<p style="text-align: center;">Vår klassiska fiskgryta med aioli</p>
+<p style="text-align: center;">105:-</p>
+<h4 style="text-align: center;">Fredag</h4>
+<p style="text-align: center;">Panerad fisk med dansk remoulad, syrad rödlök och kokt potatis</p>
+<p style="text-align: center;">105:-</p>
+</div>`;

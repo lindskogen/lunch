@@ -6,6 +6,10 @@ import {
   parseHtml as parseSeaside
 } from "./restaurants/seaside";
 import { url as hopsUrl, parseHtml as parseHops } from "./restaurants/hops";
+import {
+  url as schnitzelplatzUrl,
+  parseHtml as parseSchnitzelplatz
+} from "./restaurants/schnitzelplatz";
 
 const fetchHTML = (url: string) =>
   fetch(url)
@@ -15,5 +19,6 @@ const fetchHTML = (url: string) =>
 export const fetchAll = async (): Promise<Restaurant[]> => {
   const hops = fetchHTML(hopsUrl).then(parseHops);
   const seaside = fetchHTML(seasideUrl).then(parseSeaside);
-  return await Promise.all([hops, seaside]);
+  const schnitzelplatz = fetchHTML(schnitzelplatzUrl).then(parseSchnitzelplatz);
+  return await Promise.all([hops, seaside, schnitzelplatz]);
 };
