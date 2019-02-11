@@ -8,7 +8,9 @@ const env =
 module.exports = (phase, { defaultConfig }) => {
   if (phase === env.PHASE_PRODUCTION_SERVER) {
     // Config used to run in production.
-    return {};
+    return {
+      target: "serverless"
+    };
   }
 
   const withTypescript = require("@zeit/next-typescript");
