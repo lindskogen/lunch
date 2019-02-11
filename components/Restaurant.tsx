@@ -6,21 +6,25 @@ interface Props {
   weekDayToday: string | null;
 }
 
+const Meal = ({ title, name }: { title?: string; name: string }) => (
+  <>
+    <div className="f6 b">{title}</div>
+    <div className="ml0 mb2">{name}</div>
+  </>
+);
+
 const renderDay = ({ wday, items }: RestaurantDayMenu) => (
   <React.Fragment key={wday}>
     <h4 className="f6 fw6">{wday}</h4>
-    <div key={wday} className="lh-title">
+    <div className="lh-title">
       {items.map(({ name, title }) => (
-        <React.Fragment key={name}>
-          <div className="f6 b">{title}</div>
-          <div className="ml0 mb2">{name}</div>
-        </React.Fragment>
+        <Meal key={title} name={name} title={title} />
       ))}
     </div>
   </React.Fragment>
 );
 
-export const Restaurant: React.SFC<Props> = ({
+export const Restaurant: React.FC<Props> = ({
   restaurant: { days, name, url },
   showSingleDay,
   weekDayToday

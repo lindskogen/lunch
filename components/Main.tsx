@@ -22,9 +22,15 @@ export const Main: React.FC<Props> = ({ restaurants }) => {
   return (
     <main className="sans-serif ma2">
       {weekDayToday && (
-        <button onClick={() => setShowToday(show => !show)}>
-          {showToday ? "Visa hela veckans meny" : "Visa idag"}
-        </button>
+        <label className="flex items-center">
+          <input
+            className="mr2"
+            type="checkbox"
+            checked={showToday}
+            onChange={() => setShowToday(show => !show)}
+          />
+          Visa endast dagens
+        </label>
       )}
       {restaurants.map(res => (
         <Restaurant
