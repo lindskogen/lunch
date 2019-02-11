@@ -35,9 +35,9 @@ export const Restaurant: React.SFC<Props> = ({
         href={url}
         rel="noopener noreferrer"
         target="_blank"
-        className="link underline black hover-blue"
+        className="link black hover-blue"
       >
-        <h2>{name}</h2>
+        <h2 className="ma0 mt1 dib underline pr3 pv3">{name}</h2>
       </a>
       {weekDayToRender ? renderDay(weekDayToRender) : days.map(renderDay)}
     </div>
