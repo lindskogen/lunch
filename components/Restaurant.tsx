@@ -18,7 +18,7 @@ const renderDay = ({ wday, items }: RestaurantDayMenu) => (
     <h4 className="f6 fw6">{wday}</h4>
     <div className="lh-title">
       {items.map(({ name, title }) => (
-        <Meal key={title} name={name} title={title} />
+        <Meal key={name} name={name} title={title} />
       ))}
     </div>
   </React.Fragment>
