@@ -15,19 +15,19 @@
     "encoding": "0.1.12",
     "isomorphic-unfetch": "3.0.0",
     "lodash": "4.17.11",
-    "next": "8.0.0",
-    "react": "16.8.1",
-    "react-dom": "16.8.1"
+    "next": "8.0.3",
+    "react": "16.8.5",
+    "react-dom": "16.8.5"
   },
   "devDependencies": {
-    "@types/cheerio": "0.22.10",
-    "@types/jest": "24.0.0",
-    "@types/lodash": "4.14.120",
-    "@types/next": "7.0.6",
-    "@types/react": "16.8.2",
-    "@types/react-dom": "16.8.0",
-    "jest": "24.1.0",
-    "ts-jest": "23.10.5",
-    "typescript": "3.3.3"
+    "@types/cheerio": "0.22.11",
+    "@types/jest": "24.0.11",
+    "@types/lodash": "4.14.123",
+    "@types/next": "8.0.3",
+    "@types/react": "16.8.8",
+    "@types/react-dom": "16.8.3",
+    "jest": "24.5.0",
+    "ts-jest": "24.0.0",
+    "typescript": "3.3.4000"
   }
 }
