@@ -1,7 +1,8 @@
 import * as React from "react";
 import { useState } from "react";
 import { weekdays } from "../lib/lunch-fetcher/lib/utils";
-import { Restaurant } from "../components/Restaurant";
+import { RestaurantView } from "../components/Restaurant";
+import { Restaurant } from "../lib/lunch-fetcher/types";
 
 const getWeekday = (date: Date): string | null => {
   const dayIndex = date.getDay();
@@ -33,7 +34,7 @@ export const Main: React.FC<Props> = ({ restaurants }) => {
         </label>
       )}
       {restaurants.map(res => (
-        <Restaurant
+        <RestaurantView
           key={res.name}
           restaurant={res}
           showSingleDay={onlyShowToday}

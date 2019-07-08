@@ -1,5 +1,6 @@
 import * as _ from "lodash";
 import { isWeekday, isNotNull, isNotZero, id } from "../lib/utils";
+import { Restaurant, WeekDay } from "../types";
 
 export const url = "http://www.hopsbar.se/";
 

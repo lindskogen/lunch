@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Restaurant, RestaurantDayMenu } from "../lib/lunch-fetcher/types";
 
 interface Props {
   restaurant: Restaurant;
@@ -24,7 +25,7 @@ const renderDay = ({ wday, items }: RestaurantDayMenu) => (
   </React.Fragment>
 );
 
-export const Restaurant: React.FC<Props> = ({
+export const RestaurantView: React.FC<Props> = ({
   restaurant: { days, name, url },
   showSingleDay,
   weekDayToday

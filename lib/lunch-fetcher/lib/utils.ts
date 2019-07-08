@@ -1,3 +1,5 @@
+import { WeekDay } from "../types";
+
 export const weekdaysSV = ["måndag", "tisdag", "onsdag", "torsdag", "fredag"];
 export const weekdays = [
   null,

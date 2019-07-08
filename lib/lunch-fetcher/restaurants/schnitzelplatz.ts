@@ -1,4 +1,5 @@
 import * as _ from "lodash";
+import { Restaurant, FoodItem, RestaurantDayMenu, WeekDay } from "../types";
 
 export const url = "https://schnitzelplatz.se/lunch/";
 

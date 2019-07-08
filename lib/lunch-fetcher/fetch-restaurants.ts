@@ -10,6 +10,7 @@ import {
   url as schnitzelplatzUrl,
   parseHtml as parseSchnitzelplatz
 } from "./restaurants/schnitzelplatz";
+import { Restaurant } from "./types";
 
 const fetchHTML = (url: string) =>
   fetch(url)

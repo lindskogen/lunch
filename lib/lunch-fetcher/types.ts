@@ -1,10 +1,10 @@
-interface Restaurant {
+export interface Restaurant {
   name: string;
   url: string;
   days: RestaurantDayMenu[];
 }
 
-type WeekDay =
+export type WeekDay =
   | "Söndag"
   | "Måndag"
   | "Tisdag"
@@ -13,12 +13,12 @@ type WeekDay =
   | "Freday"
   | "Lördag";
 
-interface RestaurantDayMenu {
+export interface RestaurantDayMenu {
   wday: WeekDay;
   items: FoodItem[];
 }
 
-interface FoodItem {
+export interface FoodItem {
   name: string;
   title?: string;
 }
