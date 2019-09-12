@@ -18,8 +18,35 @@ const fetchHTML = (url: string) =>
     .then(r => cheerio.load(r));
 
 export const fetchAll = async (): Promise<Restaurant[]> => {
-  const hops = fetchHTML(hopsUrl).then(parseHops);
-  const seaside = fetchHTML(seasideUrl).then(parseSeaside);
-  const schnitzelplatz = fetchHTML(schnitzelplatzUrl).then(parseSchnitzelplatz);
+  const hops = fetchHTML(hopsUrl)
+    .then(parseHops)
+    .catch(error => {
+      console.log("Error fetching Hops:", error);
+      return {
+        name: "Hops",
+        url: hopsUrl,
+        days: []
+      };
+    });
+  const seaside = fetchHTML(seasideUrl)
+    .then(parseSeaside)
+    .catch(error => {
+      console.log("Error fetching Seaside:", error);
+      return {
+        name: "Seaside",
+        url: seasideUrl,
+        days: []
+      };
+    });
+  const schnitzelplatz = fetchHTML(schnitzelplatzUrl)
+    .then(parseSchnitzelplatz)
+    .catch(error => {
+      console.log("Error fetching Schnitzelplatz Lagerhuset:", error);
+      return {
+        name: "Schnitzelplatz Lagerhuset",
+        url: schnitzelplatzUrl,
+        days: []
+      };
+    });
   return await Promise.all([hops, seaside, schnitzelplatz]);
 };
