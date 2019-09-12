@@ -12,6 +12,17 @@ import {
 } from "./restaurants/schnitzelplatz";
 import { Restaurant } from "./types";
 
+const getEmptyRestaurantFallback = (name: string, url: string) => (
+  error: Error
+) => {
+  console.log(`Error fetching ${name}:`, error);
+  return {
+    name,
+    url,
+    days: []
+  };
+};
+
 const fetchHTML = (url: string) =>
   fetch(url)
     .then(r => r.text())
@@ -20,33 +31,14 @@ const fetchHTML = (url: string) =>
 export const fetchAll = async (): Promise<Restaurant[]> => {
   const hops = fetchHTML(hopsUrl)
     .then(parseHops)
-    .catch(error => {
-      console.log("Error fetching Hops:", error);
-      return {
-        name: "Hops",
-        url: hopsUrl,
-        days: []
-      };
-    });
+    .catch(getEmptyRestaurantFallback("Hops", hopsUrl));
   const seaside = fetchHTML(seasideUrl)
     .then(parseSeaside)
-    .catch(error => {
-      console.log("Error fetching Seaside:", error);
-      return {
-        name: "Seaside",
-        url: seasideUrl,
-        days: []
-      };
-    });
+    .catch(getEmptyRestaurantFallback("Seaside", seasideUrl));
   const schnitzelplatz = fetchHTML(schnitzelplatzUrl)
     .then(parseSchnitzelplatz)
-    .catch(error => {
-      console.log("Error fetching Schnitzelplatz Lagerhuset:", error);
-      return {
-        name: "Schnitzelplatz Lagerhuset",
-        url: schnitzelplatzUrl,
-        days: []
-      };
-    });
+    .catch(
+      getEmptyRestaurantFallback("Schnitzelplatz Lagerhuset", schnitzelplatzUrl)
+    );
   return await Promise.all([hops, seaside, schnitzelplatz]);
 };
