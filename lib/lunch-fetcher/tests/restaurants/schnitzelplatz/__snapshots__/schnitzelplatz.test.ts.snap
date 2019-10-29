@@ -6,38 +6,39 @@ Object {
     Object {
       "items": Array [
         Object {
-          "name": "Dagens fångst med rödbetor, brynt smör, kokt potatis och pepparrot",
+          "name": "Dagens fångst-stroganoff med ris",
         },
         Object {
-          "name": "Fläskschnitzel med svampsås, stekt svamp & senapsslungad potatis",
+          "name": "Parmesanpanerad fläskschnitzel med soltorkad tomatkräm och rostad potatis",
           "title": "VECKANS SCHNITZEL",
         },
         Object {
-          "name": "Potatis och purjolökssoppa med smetana",
-          "title": "SOPPA",
+          "name": "Pumpasoppa med smetana",
+          "title": "VECKANS SOPPA",
         },
         Object {
-          "name": "Kikärtsplättar, sötpotatis, rostad aioli, machesallad och citron",
+          "name": "Bakad spetskål med äppelmajonnäs, haricots verts och rostat matvete",
           "title": "VECKANS VEGETARISKA",
         },
       ],
-      "wday": "Måndag",
+      "wday": "
+Måndag",
     },
     Object {
       "items": Array [
         Object {
-          "name": "Dagens fångst med äggsås, krispigt bacon och potatisstomp",
+          "name": "Dagens fångst, fänkålsbakad med vitlökssås och kokt potatis",
         },
         Object {
-          "name": "Fläskschnitzel med svampsås, stekt svamp & senapsslungad potatis",
+          "name": "Parmesanpanerad fläskschnitzel med soltorkad tomatkräm och rostad potatis",
           "title": "VECKANS SCHNITZEL",
         },
         Object {
-          "name": "Potatis och purjolökssoppa med smetana",
-          "title": "SOPPA",
+          "name": "Pumpasoppa med smetana",
+          "title": "VECKANS SOPPA",
         },
         Object {
-          "name": "Kikärtsplättar, sötpotatis, rostad aioli, machesallad och citron",
+          "name": "Bakad spetskål med äppelmajonnäs, haricots verts och rostat matvete",
           "title": "VECKANS VEGETARISKA",
         },
       ],
@@ -46,18 +47,18 @@ Object {
     Object {
       "items": Array [
         Object {
-          "name": "Dagens fångst med bakad kål, lingonkräm och rostad potatis",
+          "name": "Dagens fångst, sesambakad med sojamajonnäs och asiatisk kålsallad",
         },
         Object {
-          "name": "Fläskschnitzel med svampsås, stekt svamp & senapsslungad potatis",
+          "name": "Parmesanpanerad fläskschnitzel med soltorkad tomatkräm och rostad potatis",
           "title": "VECKANS SCHNITZEL",
         },
         Object {
-          "name": "Potatis och purjolökssoppa med smetana",
-          "title": "SOPPA",
+          "name": "Pumpasoppa med smetana",
+          "title": "VECKANS SOPPA",
         },
         Object {
-          "name": "Kikärtsplättar, sötpotatis, rostad aioli, machesallad och citron",
+          "name": "Bakad spetskål med äppelmajonnäs, haricots verts och rostat matvete",
           "title": "VECKANS VEGETARISKA",
         },
       ],
@@ -66,18 +67,18 @@ Object {
     Object {
       "items": Array [
         Object {
-          "name": "Vår klassiska fiskgryta med aioli",
+          "name": "Platz höstiga fiskgryta med saffransaioli",
         },
         Object {
-          "name": "Fläskschnitzel med svampsås, stekt svamp & senapsslungad potatis",
+          "name": "Parmesanpanerad fläskschnitzel med soltorkad tomatkräm och rostad potatis",
           "title": "VECKANS SCHNITZEL",
         },
         Object {
-          "name": "Potatis och purjolökssoppa med smetana",
-          "title": "SOPPA",
+          "name": "Pumpasoppa med smetana",
+          "title": "VECKANS SOPPA",
         },
         Object {
-          "name": "Kikärtsplättar, sötpotatis, rostad aioli, machesallad och citron",
+          "name": "Bakad spetskål med äppelmajonnäs, haricots verts och rostat matvete",
           "title": "VECKANS VEGETARISKA",
         },
       ],
@@ -86,18 +87,18 @@ Object {
     Object {
       "items": Array [
         Object {
-          "name": "Panerad fisk med dansk remoulad, syrad rödlök och kokt potatis",
+          "name": "Dagens fångst med saffransdoftande vitvinssås, morot och potatisstomp",
         },
         Object {
-          "name": "Fläskschnitzel med svampsås, stekt svamp & senapsslungad potatis",
+          "name": "Parmesanpanerad fläskschnitzel med soltorkad tomatkräm och rostad potatis",
           "title": "VECKANS SCHNITZEL",
         },
         Object {
-          "name": "Potatis och purjolökssoppa med smetana",
-          "title": "SOPPA",
+          "name": "Pumpasoppa med smetana",
+          "title": "VECKANS SOPPA",
         },
         Object {
-          "name": "Kikärtsplättar, sötpotatis, rostad aioli, machesallad och citron",
+          "name": "Bakad spetskål med äppelmajonnäs, haricots verts och rostat matvete",
           "title": "VECKANS VEGETARISKA",
         },
       ],

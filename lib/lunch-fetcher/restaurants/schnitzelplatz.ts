@@ -3,16 +3,26 @@ import { Restaurant, FoodItem, RestaurantDayMenu, WeekDay } from "../types";
 
 export const url = "https://schnitzelplatz.se/lunch/";
 
+const firstPartOfSplitOrAll = (str: string, split: string): string => {
+  const parts = str.split(split);
+  if (parts && parts.length > 1) {
+    return parts[0];
+  } else {
+    return str;
+  }
+};
+
 export const parseHtml = ($: CheerioStatic): Restaurant => {
-  const menus = $(
-    ".textblock.section-padding--medium.blockwidth--small.text-align-center h4"
-  )
+  const menus = $(".foodmenu h4")
     .get()
     .map(node => [
       $(node).text(),
-      $(node)
-        .next("p")
-        .text()
+      firstPartOfSplitOrAll(
+        $(node)
+          .next("p")
+          .text(),
+        "\n"
+      )
     ]);
 
   const numWeekItems = menus.length - 5;

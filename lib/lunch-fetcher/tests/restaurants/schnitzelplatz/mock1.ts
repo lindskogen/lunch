@@ -1,27 +1,31 @@
 export default `<div class="content-wrapper">
-<div class="textblock section-padding--medium blockwidth--small text-align-center">
-      <h4 style="text-align: center;">Veckans schnitzel</h4>
-<p style="text-align: center;">Fläskschnitzel med svampsås, stekt svamp &amp; senapsslungad potatis</p>
-<p style="text-align: center;">105:-</p>
-<h4 style="text-align: center;">Soppa</h4>
-<p style="text-align: center;">Potatis och purjolökssoppa med smetana</p>
-<p style="text-align: center;">95:-</p>
-<h4 style="text-align: center;">Veckans vegetariska</h4>
-<p style="text-align: center;">Kikärtsplättar, sötpotatis, rostad aioli, machesallad och citron</p>
-<p style="text-align: center;">95:-</p>
-<h4 style="text-align: center;">Måndag</h4>
-<p style="text-align: center;">Dagens fångst med rödbetor, brynt smör, kokt potatis och pepparrot</p>
-<p style="text-align: center;">105:-</p>
-<h4 style="text-align: center;">Tisdag</h4>
-<p style="text-align: center;">Dagens fångst med äggsås, krispigt bacon och potatisstomp</p>
-<p style="text-align: center;">105:-</p>
-<h4 style="text-align: center;">Onsdag</h4>
-<p style="text-align: center;">Dagens fångst med bakad kål, lingonkräm och rostad potatis</p>
-<p style="text-align: center;">105:-</p>
-<h4 style="text-align: center;">Torsdag</h4>
-<p style="text-align: center;">Vår klassiska fiskgryta med aioli</p>
-<p style="text-align: center;">105:-</p>
-<h4 style="text-align: center;">Fredag</h4>
-<p style="text-align: center;">Panerad fisk med dansk remoulad, syrad rödlök och kokt potatis</p>
-<p style="text-align: center;">105:-</p>
+<div class="foodmenu section-padding--medium">
+  
+    <h4>Veckans Schnitzel</h4>
+<p>Parmesanpanerad fläskschnitzel med soltorkad tomatkräm och rostad potatis<br>
+110:-</p>
+<h4>Veckans soppa</h4>
+<p>Pumpasoppa med smetana<br>
+70:-</p>
+<h4>Veckans vegetariska</h4>
+<p>Bakad spetskål med äppelmajonnäs, haricots verts och rostat matvete<br>
+100:-</p>
+<h4>
+Måndag</h4>
+<p>Dagens fångst-stroganoff med ris<br>
+110:-</p>
+<h4>Tisdag</h4>
+<p>Dagens fångst, fänkålsbakad med vitlökssås och kokt potatis<br>
+110:-</p>
+<h4>Onsdag</h4>
+<p>Dagens fångst, sesambakad med sojamajonnäs och asiatisk kålsallad<br>
+110:-</p>
+<h4>Torsdag</h4>
+<p>Platz höstiga fiskgryta med saffransaioli<br>
+110:-</p>
+<h4>Fredag</h4>
+<p>Dagens fångst med saffransdoftande vitvinssås, morot och potatisstomp<br>
+110:-</p>
+
+  </div>
 </div>`;
