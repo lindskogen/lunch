@@ -11,7 +11,7 @@ interface Props {
 export default class extends React.Component<Props> {
   static async getInitialProps() {
     const restaurants = await fetchAll();
-    console.log(restaurants);
+    console.log(JSON.stringify(restaurants, null, 2));
     return { restaurants };
   }
 

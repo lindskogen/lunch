@@ -1,5 +1,6 @@
 import "isomorphic-unfetch";
 import * as cheerio from "cheerio";
+import { parseISO, subHours, isBefore } from "date-fns";
 
 import {
   url as seasideUrl,
@@ -11,6 +12,7 @@ import {
   parseHtml as parseSchnitzelplatz
 } from "./restaurants/schnitzelplatz";
 import { Restaurant } from "./types";
+import { cacheGet, cachePut } from "../swr-cache/cache";
 
 const getEmptyRestaurantFallback = (name: string, url: string) => (
   error: Error
@@ -28,7 +30,7 @@ const fetchHTML = (url: string) =>
     .then(r => r.text())
     .then(r => cheerio.load(r));
 
-export const fetchAll = async (): Promise<Restaurant[]> => {
+const getAllRestaurants = (): Promise<Restaurant[]> => {
   const hops = fetchHTML(hopsUrl)
     .then(parseHops)
     .catch(getEmptyRestaurantFallback("Hops", hopsUrl));
@@ -40,5 +42,21 @@ export const fetchAll = async (): Promise<Restaurant[]> => {
     .catch(
       getEmptyRestaurantFallback("Schnitzelplatz Lagerhuset", schnitzelplatzUrl)
     );
-  return await Promise.all([hops, seaside, schnitzelplatz]);
+
+  return Promise.all([hops, seaside, schnitzelplatz]);
+};
+
+export const fetchAll = async (): Promise<Restaurant[]> => {
+  const cacheObject = await cacheGet<Restaurant[]>();
+
+  if (cacheObject) {
+    if (isBefore(subHours(parseISO(cacheObject._updatedOn), 1), new Date())) {
+      getAllRestaurants().then(restaurants => cachePut(restaurants));
+    }
+    return cacheObject.cache;
+  }
+
+  const restaurants = await getAllRestaurants();
+  cachePut(restaurants);
+  return restaurants;
 };
