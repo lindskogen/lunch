@@ -50,7 +50,7 @@ export const fetchAll = async (): Promise<Restaurant[]> => {
   const cacheObject = await cacheGet<Restaurant[]>();
 
   if (cacheObject) {
-    if (isBefore(subHours(parseISO(cacheObject._updatedOn), 1), new Date())) {
+    if (isBefore(new Date(), subHours(parseISO(cacheObject._updatedOn), 1))) {
       getAllRestaurants().then(restaurants => cachePut(restaurants));
     }
     return cacheObject.cache;
