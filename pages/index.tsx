@@ -1,26 +1,32 @@
 import * as React from "react";
-import { fetchAll } from "../lib/lunch-fetcher/fetch-restaurants";
+import "isomorphic-unfetch";
+import { Suspense } from "react";
 import Head from "../head";
 import { Main } from "../components/Main";
+import useSWR from "swr";
 import { Restaurant } from "../lib/lunch-fetcher/types";
+import { ErrorBoundary } from "../components/ErrorBoundary";
 
-interface Props {
-  restaurants: Restaurant[];
-}
+const fetcher = (url: string) => fetch(url).then(r => r.json());
 
-export default class extends React.Component<Props> {
-  static async getInitialProps() {
-    const restaurants = await fetchAll();
-    console.log(JSON.stringify(restaurants, null, 2));
-    return { restaurants };
+const App = () => {
+  const { data: restaurants, isValidating, error } = useSWR<Restaurant[]>(
+    "/api/restaurants",
+    {
+      fetcher
+    }
+  );
+
+  if (isValidating || !restaurants) {
+    return <div />;
   }
 
-  render() {
-    return (
-      <>
-        <Head />
-        <Main {...this.props} />
-      </>
-    );
-  }
-}
+  return <Main restaurants={restaurants!} />;
+};
+
+export default () => (
+  <ErrorBoundary>
+    <Head />
+    <App />
+  </ErrorBoundary>
+);

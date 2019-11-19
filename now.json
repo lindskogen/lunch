@@ -1,5 +1,4 @@
 {
   "alias": "stena-lunch",
-  "builds": [{ "src": "next.config.js", "use": "@now/next" }],
   "version": 2
 }
