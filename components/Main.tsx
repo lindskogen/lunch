@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useSWR from "swr";
 import { weekdays } from "../lib/lunch-fetcher/lib/utils";
 import { Restaurant } from "../lib/lunch-fetcher/types";
@@ -15,12 +15,21 @@ const fetcher = (url: string) => fetch(url).then(r => r.json());
 
 const RESTAURANTS_URL = "/api/restaurants";
 
+interface RestaurantsResponse {
+  restaurants: Restaurant[];
+  lastUpdated: string;
+}
+
 export const Main: React.FC = () => {
-  const { data } = useSWR<Restaurant[]>(RESTAURANTS_URL, fetcher, {
+  const { data } = useSWR<RestaurantsResponse>(RESTAURANTS_URL, fetcher, {
     suspense: true
   });
-  const restaurants = data!;
+  const { restaurants, lastUpdated } = data!;
   const [showToday, setShowToday] = useState(true);
+
+  useEffect(() => {
+    console.log(new Date(lastUpdated));
+  }, [lastUpdated]);
 
   const weekDayToday = getWeekday(new Date());
   const onlyShowToday = !!(showToday && weekDayToday);
@@ -46,6 +55,17 @@ export const Main: React.FC = () => {
           weekDayToday={weekDayToday}
         />
       ))}
+
+      <div className="pt2">
+        <small className="mid-gray">
+          Uppdaterat{" "}
+          {new Date(lastUpdated).toLocaleDateString("sv-SE", {
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit"
+          })}
+        </small>
+      </div>
     </main>
   );
 };
