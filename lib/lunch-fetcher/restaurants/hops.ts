@@ -30,7 +30,7 @@ export const parseHtml = ($: CheerioStatic): Restaurant => {
 
         if (matches.length > 1) {
           const [title, name] = matches;
-          return { name: name.trim(), title: title.trim() };
+          return { name: name.trim(), title: title.trim().toUpperCase() };
         }
 
         return { name: foodname };
