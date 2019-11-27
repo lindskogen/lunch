@@ -1,8 +1,9 @@
 import * as React from "react";
 import { useState } from "react";
+import useSWR from "swr";
 import { weekdays } from "../lib/lunch-fetcher/lib/utils";
-import { RestaurantView } from "../components/Restaurant";
 import { Restaurant } from "../lib/lunch-fetcher/types";
+import { RestaurantView } from "./Restaurant";
 
 const getWeekday = (date: Date): string | null => {
   const dayIndex = date.getDay();
@@ -10,11 +11,15 @@ const getWeekday = (date: Date): string | null => {
   return weekdays[dayIndex];
 };
 
-interface Props {
-  restaurants: Restaurant[];
-}
+const fetcher = (url: string) => fetch(url).then(r => r.json());
 
-export const Main: React.FC<Props> = ({ restaurants }) => {
+const RESTAURANTS_URL = "/api/restaurants";
+
+export const Main: React.FC = () => {
+  const { data } = useSWR<Restaurant[]>(RESTAURANTS_URL, fetcher, {
+    suspense: true
+  });
+  const restaurants = data!;
   const [showToday, setShowToday] = useState(true);
 
   const weekDayToday = getWeekday(new Date());

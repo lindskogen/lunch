@@ -1,22 +1,20 @@
-import * as React from "react";
 import "isomorphic-unfetch";
-import Head from "../head";
-import { Main } from "../components/Main";
-import useSWR from "swr";
-import { Restaurant } from "../lib/lunch-fetcher/types";
+import * as React from "react";
+import { Suspense } from "react";
 import { Loading } from "../components/Loading";
-
-const fetcher = (url: string) => fetch(url).then(r => r.json());
-
-const RESTAURANTS_URL = "/api/restaurants";
+import { Main } from "../components/Main";
+import { NoSSR } from "../components/NoSSR";
+import Head from "../head";
 
 export default () => {
-  const { data: restaurants } = useSWR<Restaurant[]>(RESTAURANTS_URL, fetcher);
-
   return (
     <>
       <Head />
-      {restaurants ? <Main restaurants={restaurants} /> : <Loading />}
+      <NoSSR>
+        <Suspense fallback={<Loading />}>
+          <Main />
+        </Suspense>
+      </NoSSR>
     </>
   );
 };
