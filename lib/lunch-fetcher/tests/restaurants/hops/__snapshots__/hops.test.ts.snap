@@ -11,6 +11,22 @@ Object {
         Object {
           "name": "Panerad vittring med kräft- och västerbottenkräm, citron samt kokt potatis och citron",
         },
+        Object {
+          "name": "Med köttfärs, bacon, champinjoner och svartpeppar.",
+          "title": "Pasta",
+        },
+        Object {
+          "name": "Pannbiff med brynt lök, potatismos och lingonsylt samt gräddsås.",
+          "title": "Husman",
+        },
+        Object {
+          "name": "Chilibiff med rostade rotfrukter samt paprikasås.",
+          "title": "Vegetariskt",
+        },
+        Object {
+          "name": "Välj mellan kyckling eller hand skalade räkor med krutonger, bacon, parmesanost & ceasardressing.",
+          "title": "Caesarsallad",
+        },
       ],
       "wday": "Måndag",
     },
@@ -21,6 +37,22 @@ Object {
         },
         Object {
           "name": "Kokt torskfilé med citron och salladslöksås serveras med chili frästa räkor samt potatismos",
+        },
+        Object {
+          "name": "Med köttfärs, bacon, champinjoner och svartpeppar.",
+          "title": "Pasta",
+        },
+        Object {
+          "name": "Pannbiff med brynt lök, potatismos och lingonsylt samt gräddsås.",
+          "title": "Husman",
+        },
+        Object {
+          "name": "Chilibiff med rostade rotfrukter samt paprikasås.",
+          "title": "Vegetariskt",
+        },
+        Object {
+          "name": "Välj mellan kyckling eller hand skalade räkor med krutonger, bacon, parmesanost & ceasardressing.",
+          "title": "Caesarsallad",
         },
       ],
       "wday": "Tisdag",
@@ -33,6 +65,22 @@ Object {
         Object {
           "name": "Stekt panerad sejfilé med vitlök och saffranssmakande räkröra samt dill, citron och kokt potatis.",
         },
+        Object {
+          "name": "Med köttfärs, bacon, champinjoner och svartpeppar.",
+          "title": "Pasta",
+        },
+        Object {
+          "name": "Pannbiff med brynt lök, potatismos och lingonsylt samt gräddsås.",
+          "title": "Husman",
+        },
+        Object {
+          "name": "Chilibiff med rostade rotfrukter samt paprikasås.",
+          "title": "Vegetariskt",
+        },
+        Object {
+          "name": "Välj mellan kyckling eller hand skalade räkor med krutonger, bacon, parmesanost & ceasardressing.",
+          "title": "Caesarsallad",
+        },
       ],
       "wday": "Onsdag",
     },
@@ -43,6 +91,22 @@ Object {
         },
         Object {
           "name": "Stekt kummel med räkor, pepparrot, brynt smör och gröna ärtor serveras med kokt potatis",
+        },
+        Object {
+          "name": "Med köttfärs, bacon, champinjoner och svartpeppar.",
+          "title": "Pasta",
+        },
+        Object {
+          "name": "Pannbiff med brynt lök, potatismos och lingonsylt samt gräddsås.",
+          "title": "Husman",
+        },
+        Object {
+          "name": "Chilibiff med rostade rotfrukter samt paprikasås.",
+          "title": "Vegetariskt",
+        },
+        Object {
+          "name": "Välj mellan kyckling eller hand skalade räkor med krutonger, bacon, parmesanost & ceasardressing.",
+          "title": "Caesarsallad",
         },
       ],
       "wday": "Torsdag",
@@ -57,6 +121,22 @@ Object {
         },
         Object {
           "name": "Efterrätt ingår i alla dagens rätter.",
+        },
+        Object {
+          "name": "Med köttfärs, bacon, champinjoner och svartpeppar.",
+          "title": "Pasta",
+        },
+        Object {
+          "name": "Pannbiff med brynt lök, potatismos och lingonsylt samt gräddsås.",
+          "title": "Husman",
+        },
+        Object {
+          "name": "Chilibiff med rostade rotfrukter samt paprikasås.",
+          "title": "Vegetariskt",
+        },
+        Object {
+          "name": "Välj mellan kyckling eller hand skalade räkor med krutonger, bacon, parmesanost & ceasardressing.",
+          "title": "Caesarsallad",
         },
       ],
       "wday": "Fredag",
