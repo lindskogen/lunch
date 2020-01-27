@@ -16,7 +16,7 @@ export const parseHtml = ($: CheerioStatic): Restaurant => {
   const menus = $(".foodmenu h4")
     .get()
     .map(node => [
-      $(node).text(),
+      $(node).text().trim(),
       firstPartOfSplitOrAll(
         $(node)
           .next("p")
