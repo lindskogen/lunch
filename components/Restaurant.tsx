@@ -26,7 +26,7 @@ const Meal = ({ title, name }: { title?: string; name: string }) => (
 
 const renderDay = (hideDay = false) => ({ wday, items }: RestaurantDayMenu) => (
   <React.Fragment key={wday}>
-    {!hideDay && <h4 className="f6 fw6">{wday}</h4>}
+    {!hideDay && <h4 className="f6 fw6 underline">{wday}</h4>}
     <div className="lh-title">
       {items.map(({ name, title }) => (
         <Meal key={name} name={name} title={title} />
@@ -46,12 +46,12 @@ export const RestaurantView: React.FC<Props> = ({
     days.find(({ wday }) => wday.toLowerCase() === weekDayToday);
 
   return (
-    <div className={"pa4 " + backgroundColors[index]}>
+    <div className={"pa4 " + backgroundColors[index % backgroundColors.length]}>
       <a
         href={url}
         rel="noopener noreferrer"
         target="_blank"
-        className="link black hover-blue"
+        className="link black hover-navy"
       >
         <h2 className="ma0 mt0 dib pr3 pb4 tracked ttu">{name}</h2>
       </a>
