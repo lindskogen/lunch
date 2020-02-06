@@ -1,11 +1,21 @@
 import * as React from "react";
 import { Restaurant, RestaurantDayMenu } from "../lib/lunch-fetcher/types";
+import { shuffle } from "lodash";
 
 interface Props {
+  index: number;
   restaurant: Restaurant;
   showSingleDay: boolean;
   weekDayToday: string | null;
 }
+
+const backgroundColors = shuffle([
+  "bg-washed-blue",
+  "bg-washed-green",
+  "bg-lightest-blue",
+  "bg-washed-yellow",
+  "bg-washed-red"
+]);
 
 const Meal = ({ title, name }: { title?: string; name: string }) => (
   <>
@@ -14,9 +24,9 @@ const Meal = ({ title, name }: { title?: string; name: string }) => (
   </>
 );
 
-const renderDay = ({ wday, items }: RestaurantDayMenu) => (
+const renderDay = (hideDay = false) => ({ wday, items }: RestaurantDayMenu) => (
   <React.Fragment key={wday}>
-    <h4 className="f6 fw6">{wday}</h4>
+    {!hideDay && <h4 className="f6 fw6">{wday}</h4>}
     <div className="lh-title">
       {items.map(({ name, title }) => (
         <Meal key={name} name={name} title={title} />
@@ -26,6 +36,7 @@ const renderDay = ({ wday, items }: RestaurantDayMenu) => (
 );
 
 export const RestaurantView: React.FC<Props> = ({
+  index,
   restaurant: { days, name, url },
   showSingleDay,
   weekDayToday
@@ -35,16 +46,18 @@ export const RestaurantView: React.FC<Props> = ({
     days.find(({ wday }) => wday.toLowerCase() === weekDayToday);
 
   return (
-    <div>
+    <div className={"pa4 " + backgroundColors[index]}>
       <a
         href={url}
         rel="noopener noreferrer"
         target="_blank"
         className="link black hover-blue"
       >
-        <h2 className="ma0 mt1 dib underline pr3 pv3">{name}</h2>
+        <h2 className="ma0 mt0 dib pr3 pb4 tracked ttu">{name}</h2>
       </a>
-      {weekDayToRender ? renderDay(weekDayToRender) : days.map(renderDay)}
+      {weekDayToRender
+        ? renderDay(showSingleDay)(weekDayToRender)
+        : days.map(renderDay(showSingleDay))}
     </div>
   );
 };

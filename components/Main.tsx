@@ -35,9 +35,9 @@ export const Main: React.FC = () => {
   const onlyShowToday = !!(showToday && weekDayToday);
 
   return (
-    <main className="sans-serif ma2">
+    <main className="sans-serif">
       {weekDayToday && (
-        <label className="flex items-center">
+        <label className="ma4 flex items-center">
           <input
             className="mr2"
             type="checkbox"
@@ -47,16 +47,17 @@ export const Main: React.FC = () => {
           Visa endast dagens
         </label>
       )}
-      {restaurants.map(res => (
+      {restaurants.map((res, index) => (
         <RestaurantView
           key={res.name}
+          index={index}
           restaurant={res}
           showSingleDay={onlyShowToday}
           weekDayToday={weekDayToday}
         />
       ))}
 
-      <div className="pt2">
+      <div className="pt2 ma4 ">
         <small className="mid-gray">
           Uppdaterat{" "}
           {new Date(lastUpdated).toLocaleDateString("sv-SE", {
