@@ -26,7 +26,7 @@ const Meal = ({ title, name }: { title?: string; name: string }) => (
 
 const renderDay = (hideDay = false) => ({ wday, items }: RestaurantDayMenu) => (
   <React.Fragment key={wday}>
-    {!hideDay && <h4 className="f6 fw6 underline">{wday}</h4>}
+    {!hideDay && <h4 className="f6 fw6 pb2 pt2 bb">{wday}</h4>}
     <div className="lh-title">
       {items.map(({ name, title }) => (
         <Meal key={name} name={name} title={title} />
