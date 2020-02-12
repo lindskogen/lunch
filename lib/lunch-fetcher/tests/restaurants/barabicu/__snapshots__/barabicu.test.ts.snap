@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`barabicu when provided with mock1 should work 1`] = `
+Object {
+  "days": Array [
+    Object {
+      "items": Array [
+        Object {
+          "name": "Friterad blomkål med syrad kål, rödlök, örtmayo, vetetortilla och koriander",
+          "title": "CAULIFLOWER TACOS",
+        },
+        Object {
+          "name": "Ångad fisk med räkor, ägg, skirat smör, pepparrot, och dillkokt potatis",
+          "title": "CLASSIC FISH",
+        },
+        Object {
+          "name": "Chilirökt fläsksida med rostad sötpotatis, äpplechutney och chilipicklad pumpa ",
+          "title": "SMOKED PORKBELLY",
+        },
+      ],
+      "wday": "Måndag",
+    },
+    Object {
+      "items": Array [
+        Object {
+          "name": "Friterad blomkål med syrad kål, rödlök, örtmayo, vetetortilla och koriander",
+          "title": "CAULIFLOWER TACOS",
+        },
+        Object {
+          "name": "Dagens fångst med rotselleripuré, broccoli, koriander och citron",
+          "title": "BAKED FISH",
+        },
+        Object {
+          "name": "Chilimarinerad kyckling med bön-& potatiskrokett, chummichurri och rökta tomater",
+          "title": "HOT GRILLED CHICKEN",
+        },
+      ],
+      "wday": "Tisdag",
+    },
+    Object {
+      "items": Array [
+        Object {
+          "name": "Friterad blomkål med syrad kål, rödlök, örtmayo, vetetortilla och koriander",
+          "title": "CAULIFLOWER TACOS",
+        },
+        Object {
+          "name": "Sesambakad lax med teriyakiglace, vietnamesisk sallad, lime, koriander och jasminris",
+          "title": "SESAME SALMON",
+        },
+        Object {
+          "name": "Långbakad högrev med chili, bönor, créme fraiche, totopos, lime och cheddarost ",
+          "title": "TEXAS BEEF CHILI",
+        },
+      ],
+      "wday": "Onsdag",
+    },
+    Object {
+      "items": Array [
+        Object {
+          "name": "Friterad blomkål med syrad kål, rödlök, örtmayo, vetetortilla och koriander",
+          "title": "CAULIFLOWER TACOS",
+        },
+        Object {
+          "name": "Dagens fångst med brynt smör, friterad grönkål, morot, citron och krossad potatis",
+          "title": "STEAMED FISH",
+        },
+        Object {
+          "name": "Grillad fläskkarré på spett med soya-, ingefära- & sesamglace, röd curry, sticklök och jasminris",
+          "title": "ASIAN TEMPTATION PORK SKEWER",
+        },
+      ],
+      "wday": "Torsdag",
+    },
+    Object {
+      "items": Array [
+        Object {
+          "name": "Friterad blomkål med syrad kål, rödlök, örtmayo, vetetortilla och koriander",
+          "title": "CAULIFLOWER TACOS",
+        },
+        Object {
+          "name": "Dagens fångst med blåmusslor, räkor, tomat, fänkål, saffran, potatis och aioli",
+          "title": "BOUILLABAISSE",
+        },
+        Object {
+          "name": "Grillad rostbiff med rostade rotfrukter, chimmichurri, fetaost och rostad lök",
+          "title": "SPICY ROSTED BEEF",
+        },
+      ],
+      "wday": "Fredag",
+    },
+  ],
+  "name": "Barabicu",
+  "url": "https://barabicu.se/",
+}
+`;

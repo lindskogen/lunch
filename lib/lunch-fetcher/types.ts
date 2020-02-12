@@ -10,7 +10,7 @@ export type WeekDay =
   | "Tisdag"
   | "Onsdag"
   | "Torsdag"
-  | "Freday"
+  | "Fredag"
   | "Lördag";
 
 export interface RestaurantDayMenu {

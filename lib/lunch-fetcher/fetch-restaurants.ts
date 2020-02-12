@@ -6,6 +6,7 @@ import {
   parseHtml as parseSeaside
 } from "./restaurants/seaside";
 import { url as hopsUrl, parseHtml as parseHops } from "./restaurants/hops";
+import { url as barabicuUrl, parseHtml as parseBarabicu } from "./restaurants/barabicu";
 import {
   url as schnitzelplatzUrl,
   parseHtml as parseSchnitzelplatz
@@ -40,8 +41,13 @@ const getAllRestaurants = (): Promise<Restaurant[]> => {
     .catch(
       getEmptyRestaurantFallback("Schnitzelplatz Lagerhuset", schnitzelplatzUrl)
     );
+  const barabicu = fetchHTML(barabicuUrl)
+    .then(parseBarabicu)
+    .catch(
+      getEmptyRestaurantFallback("Barabicu", barabicuUrl)
+    );
 
-  return Promise.all([hops, seaside, schnitzelplatz]);
+  return Promise.all([hops, seaside, schnitzelplatz, barabicu]);
 };
 
 export const fetchAll = (): Promise<Restaurant[]> => {
