@@ -47,14 +47,16 @@ export const RestaurantView: React.FC<Props> = ({
 
   return (
     <div className={"pa4 " + backgroundColors[index % backgroundColors.length]}>
-      <a
-        href={url}
-        rel="noopener noreferrer"
-        target="_blank"
-        className="link black hover-navy"
-      >
-        <h2 className="ma0 mt0 dib pr3 pb4 tracked ttu">{name}</h2>
-      </a>
+      <h2 className="ma0 mt0 dib pr3 pb4 tracked ttu">
+        <a
+          href={url}
+          rel="noopener noreferrer"
+          target="_blank"
+          className="link black hover-navy underline-hover"
+        >
+          {name}
+        </a>
+      </h2>
       {weekDayToRender
         ? renderDay(showSingleDay)(weekDayToRender)
         : days.map(renderDay(showSingleDay))}
