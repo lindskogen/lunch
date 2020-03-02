@@ -8,5 +8,6 @@ export default () => (
       href="https://unpkg.com/tachyons@4/css/tachyons.min.css"
     />
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <title>Stena Lunch</title>
   </Head>
 );
