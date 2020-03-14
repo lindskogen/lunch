@@ -6,12 +6,20 @@ import {
   parseHtml as parseSeaside
 } from "./restaurants/seaside";
 import { url as hopsUrl, parseHtml as parseHops } from "./restaurants/hops";
-import { url as barabicuUrl, parseHtml as parseBarabicu } from "./restaurants/barabicu";
+import {
+  url as barabicuUrl,
+  parseHtml as parseBarabicu
+} from "./restaurants/barabicu";
 import {
   url as schnitzelplatzUrl,
   parseHtml as parseSchnitzelplatz
 } from "./restaurants/schnitzelplatz";
 import { Restaurant } from "./types";
+import {
+  fetchMeals,
+  parseResponse as parseBankok,
+  url as bankokUrl
+} from "./restaurants/bankok";
 
 const getEmptyRestaurantFallback = (name: string, url: string) => (
   error: Error
@@ -43,11 +51,13 @@ const getAllRestaurants = (): Promise<Restaurant[]> => {
     );
   const barabicu = fetchHTML(barabicuUrl)
     .then(parseBarabicu)
-    .catch(
-      getEmptyRestaurantFallback("Barabicu", barabicuUrl)
-    );
+    .catch(getEmptyRestaurantFallback("Barabicu", barabicuUrl));
 
-  return Promise.all([hops, seaside, schnitzelplatz, barabicu]);
+  const bankok = fetchMeals()
+    .then(parseBankok)
+    .catch(getEmptyRestaurantFallback("Bankok Kitchen", bankokUrl));
+
+  return Promise.all([hops, seaside, schnitzelplatz, barabicu, bankok]);
 };
 
 export const fetchAll = (): Promise<Restaurant[]> => {

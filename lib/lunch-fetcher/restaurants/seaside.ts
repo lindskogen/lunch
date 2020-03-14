@@ -1,5 +1,5 @@
 import * as _ from "lodash";
-import { isWeekday, isNotNull, isNotZero } from "../lib/utils";
+import { isWeekday, isNotNull, isNotZero, filterMap } from "../lib/utils";
 import { Restaurant, WeekDay } from "../types";
 
 export const url = "http://seaside.kvartersmenyn.se/";
@@ -12,9 +12,9 @@ export const parseHtml = ($: CheerioStatic): Restaurant => {
         .filter(i => i.tagName === "strong" || i.nodeValue)
         .map(item => $(item).text());
 
-      const splitIndexes = allNodes
-        .map((text, index) => (isWeekday(text) ? index : null))
-        .filter(isNotNull);
+      const splitIndexes = filterMap(allNodes, (text, index) =>
+        isWeekday(text) ? index : null
+      );
 
       let lastIndex = 0;
       const days = splitIndexes

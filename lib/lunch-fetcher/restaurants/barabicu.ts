@@ -1,5 +1,5 @@
 import * as _ from "lodash";
-import { isNotNull } from "../lib/utils";
+import { isNotNull, filterMap } from "../lib/utils";
 import { FoodItem, Restaurant, WeekDay, RestaurantDayMenu } from "../types";
 
 export const url = "https://barabicu.se/";
@@ -16,17 +16,18 @@ export const parseHtml = ($: CheerioStatic): Restaurant => {
     .toArray()
     .map<RestaurantDayMenu>((dayNode, index) => {
       return {
-        items: $("h3", dayNode)
-          .toArray()
-          .map<FoodItem | null>(elem => {
-            if ($(elem).text() === '' || $(elem.next).text() === '') {
-              return null;
-            }
-            return {
-              name: $(elem.next).text(),
-              title: $(elem).text().split('•')[0].trim()
-            };
-          }).filter(isNotNull),
+        items: filterMap($("h3", dayNode).toArray(), elem => {
+          if ($(elem).text() === "" || $(elem.next).text() === "") {
+            return null;
+          }
+          return {
+            name: $(elem.next).text(),
+            title: $(elem)
+              .text()
+              .split("•")[0]
+              .trim()
+          };
+        }),
         wday: weekdayTranslations[index]
       };
     });
