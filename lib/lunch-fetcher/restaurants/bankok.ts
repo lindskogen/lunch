@@ -53,8 +53,6 @@ const transformToFoodItem = (item: Item): FoodItem => {
   const isVegetarian = item.description.match(/VEGETARISK/);
   const isVegan = item.description.match(/VEGAN/);
 
-  console.log('"' + item.name + '"');
-
   return {
     name: item.description
       .replace(/\(?VEGETARISK\)? ?/, "")
