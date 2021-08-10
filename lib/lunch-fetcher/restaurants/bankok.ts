@@ -66,8 +66,6 @@ const transformToFoodItem = (item: Item): FoodItem => {
 };
 
 const groupMeals = (data: RestaurantData): RestaurantDayMenu[] => {
-  console.log(data);
-
   const itemsByItemCategory = groupBy(data.items, (item) => item.itemCategory);
 
   const days = data.itemCategories.filter((category) =>
