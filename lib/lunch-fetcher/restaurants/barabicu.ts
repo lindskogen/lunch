@@ -1,4 +1,3 @@
-import * as _ from "lodash";
 import { isNotNull, filterMap } from "../lib/utils";
 import { FoodItem, Restaurant, WeekDay, RestaurantDayMenu } from "../types";
 
@@ -9,26 +8,23 @@ const weekdayTranslations: WeekDay[] = [
   "Tisdag",
   "Onsdag",
   "Torsdag",
-  "Fredag"
+  "Fredag",
 ];
 export const parseHtml = ($: CheerioStatic): Restaurant => {
   const menus = $("#todays-lunch li")
     .toArray()
     .map<RestaurantDayMenu>((dayNode, index) => {
       return {
-        items: filterMap($("h3", dayNode).toArray(), elem => {
+        items: filterMap($("h3", dayNode).toArray(), (elem) => {
           if ($(elem).text() === "" || $(elem.next).text() === "") {
             return null;
           }
           return {
             name: $(elem.next).text(),
-            title: $(elem)
-              .text()
-              .split("•")[0]
-              .trim()
+            title: $(elem).text().split("•")[0].trim(),
           };
         }),
-        wday: weekdayTranslations[index]
+        wday: weekdayTranslations[index],
       };
     });
 

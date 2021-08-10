@@ -12,7 +12,6 @@ export interface Item {
   outOfStock: boolean;
   sortOrder: number;
   category: number;
-  additionalItems: any[];
   ingestions: Ingestion[];
   itemCategory: string;
 }

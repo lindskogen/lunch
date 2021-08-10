@@ -5,18 +5,15 @@ import { filterMap, mapDayNameToWeekDay } from "../lib/utils";
 
 const QUERY = `
 query Query($clientId: String!) {
-    items(clientId: $clientId) {
-      id
-      name
-      preview
-      info
-      description
-      outOfStock
-      sortOrder
-      category
-      additionalItems {
-        name
-    }
+  items(clientId: $clientId) {
+    id
+    name
+    preview
+    info
+    description
+    outOfStock
+    sortOrder
+    category
     ingestions {
         price
         type
@@ -41,36 +38,45 @@ export const fetchMeals = (): Promise<RestaurantData> =>
   fetch("https://secure.paidit.se/graphql", {
     method: "POST",
     headers: {
-      "content-type": "application/json"
+      "content-type": "application/json",
     },
     body: JSON.stringify({
       query: QUERY,
       variables: { clientId: CLIENT_ID },
-      operationName: "Query"
-    })
+      operationName: "Query",
+    }),
   })
-    .then(r => r.json())
-    .then(r => r.data);
+    .then((r) => r.json())
+    .then((r) => r.data);
 
 const transformToFoodItem = (item: Item): FoodItem => {
   const isVegetarian = item.description.match(/VEGETARISK/);
+  const isVegan = item.description.match(/VEGAN/);
+
+  console.log('"' + item.name + '"');
 
   return {
     name: item.description
       .replace(/\(?VEGETARISK\)? ?/, "")
+      .replace(/\(?VEGAN\)? ?/, "")
       .replace(/ \./g, "."),
-    title: item.name.substring(0, 1) + (isVegetarian ? " — VEGETARISK" : "")
+    title: (
+      item.name.replace(/,$/g, "").replace(",", " — ") +
+      (isVegetarian ? " — VEGETARISK" : isVegan ? " — VEGANSK" : "")
+    ).toUpperCase(),
   };
 };
 
 const groupMeals = (data: RestaurantData): RestaurantDayMenu[] => {
-  const itemsByItemCategory = groupBy(data.items, item => item.itemCategory);
+  console.log(data);
 
-  const days = data.itemCategories.filter(category =>
+  const itemsByItemCategory = groupBy(data.items, (item) => item.itemCategory);
+
+  const days = data.itemCategories.filter((category) =>
     category.name.toLowerCase().includes("lunch")
   );
 
-  return filterMap(days, day => {
+  return filterMap(days, (day) => {
     const dayName = mapDayNameToWeekDay(day.name);
 
     if (!dayName) {
@@ -79,7 +85,7 @@ const groupMeals = (data: RestaurantData): RestaurantDayMenu[] => {
 
     return {
       items: take(itemsByItemCategory[day.id], 5).map(transformToFoodItem),
-      wday: dayName
+      wday: dayName,
     };
   });
 };
@@ -87,5 +93,5 @@ const groupMeals = (data: RestaurantData): RestaurantDayMenu[] => {
 export const parseResponse = (restaurantData: RestaurantData): Restaurant => ({
   name: "Bankok Kitchen",
   url,
-  days: groupMeals(restaurantData)
+  days: groupMeals(restaurantData),
 });
