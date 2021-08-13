@@ -1,8 +1,8 @@
 import * as cheerio from "cheerio";
 import { parseHtml } from "../../../restaurants/seaside";
 
-import mock1 from "./mock1";
-import mock2 from "./mock2";
+import { mock as mock1 } from "./mock1";
+import { mock as mock2 } from "./mock2";
 
 describe("seaside", () => {
   describe("when provided with mock 1", () => {
@@ -12,7 +12,7 @@ describe("seaside", () => {
     });
 
     it("should have 6 foods per day", () => {
-      result.days.forEach(day => {
+      result.days.forEach((day) => {
         expect(day.items).toHaveLength(6);
       });
     });
@@ -22,8 +22,8 @@ describe("seaside", () => {
     });
 
     it("should remove colon from title and name", () => {
-      result.days.forEach(day => {
-        day.items.forEach(item => {
+      result.days.forEach((day) => {
+        day.items.forEach((item) => {
           expect(item.title).not.toMatch(/:/);
           expect(item.name).not.toMatch(/:/);
         });
@@ -31,8 +31,8 @@ describe("seaside", () => {
     });
 
     it("should have no empty names", () => {
-      result.days.forEach(day => {
-        day.items.forEach(item => {
+      result.days.forEach((day) => {
+        day.items.forEach((item) => {
           expect(item.name).not.toHaveLength(0);
         });
       });
@@ -45,7 +45,7 @@ describe("seaside", () => {
     });
 
     it("should have 6 foods per day", () => {
-      result.days.forEach(day => {
+      result.days.forEach((day) => {
         expect(day.items).toHaveLength(6);
       });
     });
@@ -55,8 +55,8 @@ describe("seaside", () => {
     });
 
     it("should remove colon from title and name", () => {
-      result.days.forEach(day => {
-        day.items.forEach(item => {
+      result.days.forEach((day) => {
+        day.items.forEach((item) => {
           expect(item.title).not.toMatch(/:/);
           expect(item.name).not.toMatch(/:/);
         });
@@ -64,8 +64,8 @@ describe("seaside", () => {
     });
 
     it("should have no empty names", () => {
-      result.days.forEach(day => {
-        day.items.forEach(item => {
+      result.days.forEach((day) => {
+        day.items.forEach((item) => {
           expect(item.name).not.toHaveLength(0);
         });
       });

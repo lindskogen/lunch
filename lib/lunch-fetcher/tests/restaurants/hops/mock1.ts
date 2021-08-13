@@ -1,4 +1,4 @@
-export default `
+export const mock = `
 <div id="Veckansmeny" class="tabcontent">
 
   <p><span class="obs">OBS! Vänligen uppdatera sidan för att se senaste lunchmenyn</span></p>

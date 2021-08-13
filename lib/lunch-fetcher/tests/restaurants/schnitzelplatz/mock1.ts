@@ -1,4 +1,4 @@
-export default `<div class="content-wrapper">
+export const mock = `<div class="content-wrapper">
 <div class="foodmenu section-padding--medium">
   
     <h4>Veckans Schnitzel</h4>

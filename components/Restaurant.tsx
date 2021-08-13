@@ -14,7 +14,7 @@ const backgroundColors = shuffle([
   "bg-washed-green",
   "bg-lightest-blue",
   "bg-washed-yellow",
-  "bg-washed-red"
+  "bg-washed-red",
 ]);
 
 const Meal = ({ title, name }: { title?: string; name: string }) => (
@@ -24,7 +24,7 @@ const Meal = ({ title, name }: { title?: string; name: string }) => (
   </>
 );
 
-const renderDay = (hideDay = false) => ({ wday, items }: RestaurantDayMenu) => (
+const renderDay = (hideDay: boolean, { wday, items }: RestaurantDayMenu) => (
   <React.Fragment key={wday}>
     {!hideDay && <h4 className="f6 fw6 pb2 pt2 bb">{wday}</h4>}
     <div className="lh-title">
@@ -39,7 +39,7 @@ export const RestaurantView: React.FC<Props> = ({
   index,
   restaurant: { days, name, url },
   showSingleDay,
-  weekDayToday
+  weekDayToday,
 }) => {
   const weekDayToRender =
     showSingleDay &&
@@ -58,8 +58,8 @@ export const RestaurantView: React.FC<Props> = ({
         </a>
       </h2>
       {weekDayToRender
-        ? renderDay(showSingleDay)(weekDayToRender)
-        : days.map(renderDay(showSingleDay))}
+        ? renderDay(showSingleDay, weekDayToRender)
+        : days.map((day) => renderDay(showSingleDay, day))}
     </div>
   );
 };

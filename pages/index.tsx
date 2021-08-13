@@ -6,7 +6,7 @@ import { Main } from "../components/Main";
 import { NoSSR } from "../components/NoSSR";
 import Head from "../head";
 
-export default () => {
+const IndexPage = () => {
   return (
     <>
       <Head />
@@ -18,3 +18,5 @@ export default () => {
     </>
   );
 };
+
+export default IndexPage;

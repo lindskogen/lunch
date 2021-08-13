@@ -1,7 +1,7 @@
 import * as cheerio from "cheerio";
 import { parseHtml } from "../../../restaurants/hops";
 
-import mock1 from "./mock1";
+import { mock as mock1 } from "./mock1";
 
 describe("hops", () => {
   describe("when provided with mock 1", () => {
@@ -15,16 +15,16 @@ describe("hops", () => {
     });
 
     it("should remove colon from title and name", () => {
-      result.days.forEach(day => {
-        day.items.forEach(item => {
+      result.days.forEach((day) => {
+        day.items.forEach((item) => {
           expect(item.name).not.toMatch(/:/);
         });
       });
     });
 
     it("should have no empty names", () => {
-      result.days.forEach(day => {
-        day.items.forEach(item => {
+      result.days.forEach((day) => {
+        day.items.forEach((item) => {
           expect(item.name).not.toHaveLength(0);
         });
       });

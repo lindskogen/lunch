@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export const Loading = () => (
   <div
@@ -7,9 +8,9 @@ export const Loading = () => (
       height: "100vh",
       display: "flex",
       justifyContent: "center",
-      alignItems: "center"
+      alignItems: "center",
     }}
   >
-    <img src="/small-loading.svg" />
+    <Image src="/small-loading.svg" alt="Loading" />
   </div>
 );
