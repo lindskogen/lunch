@@ -11,6 +11,6 @@ export const Loading = () => (
       alignItems: "center",
     }}
   >
-    <Image src="/small-loading.svg" alt="Loading" />
+    <Image src="/small-loading.svg" alt="Loading" width={100} height={100} />
   </div>
 );
