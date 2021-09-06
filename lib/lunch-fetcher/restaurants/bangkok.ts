@@ -1,4 +1,4 @@
-import { RestaurantData, Item } from "./bankok_types";
+import { RestaurantData, Item } from "./bangkok_types";
 import { RestaurantDayMenu, WeekDay, FoodItem, Restaurant } from "../types";
 import { groupBy, startCase, take } from "lodash";
 import { filterMap, mapDayNameToWeekDay } from "../lib/utils";
@@ -87,7 +87,7 @@ const groupMeals = (data: RestaurantData): RestaurantDayMenu[] => {
 };
 
 export const parseResponse = (restaurantData: RestaurantData): Restaurant => ({
-  name: "Bankok Kitchen",
+  name: "Bangkok Kitchen",
   url,
   days: groupMeals(restaurantData),
 });

@@ -17,9 +17,9 @@ import {
 import { Restaurant } from "./types";
 import {
   fetchMeals,
-  parseResponse as parseBankok,
-  url as bankokUrl
-} from "./restaurants/bankok";
+  parseResponse as parseBangkok,
+  url as bangkokUrl
+} from "./restaurants/bangkok";
 
 const getEmptyRestaurantFallback = (name: string, url: string) => (
   error: Error
@@ -53,11 +53,11 @@ const getAllRestaurants = (): Promise<Restaurant[]> => {
     .then(parseBarabicu)
     .catch(getEmptyRestaurantFallback("Barabicu", barabicuUrl));
 
-  const bankok = fetchMeals()
-    .then(parseBankok)
-    .catch(getEmptyRestaurantFallback("Bankok Kitchen", bankokUrl));
+  const bangkok = fetchMeals()
+    .then(parseBangkok)
+    .catch(getEmptyRestaurantFallback("Bangkok Kitchen", bangkokUrl));
 
-  return Promise.all([hops, seaside, schnitzelplatz, barabicu, bankok]);
+  return Promise.all([hops, seaside, schnitzelplatz, barabicu, bangkok]);
 };
 
 export const fetchAll = (): Promise<Restaurant[]> => {
