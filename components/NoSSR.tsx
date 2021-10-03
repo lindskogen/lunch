@@ -4,7 +4,7 @@ export class NoSSR extends React.Component<{}, { canRender: boolean }> {
   constructor(args: {}) {
     super(args);
     this.state = {
-      canRender: false
+      canRender: false,
     };
   }
 
