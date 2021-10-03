@@ -11,7 +11,7 @@ const getWeekday = (date: Date): string | null => {
   return weekdays[dayIndex];
 };
 
-const fetcher = (url: string) => fetch(url).then(r => r.json());
+const fetcher = (url: string) => fetch(url).then((r) => r.json());
 
 const RESTAURANTS_URL = "/api/restaurants";
 
@@ -22,7 +22,7 @@ interface RestaurantsResponse {
 
 export const Main: React.FC = () => {
   const { data } = useSWR<RestaurantsResponse>(RESTAURANTS_URL, fetcher, {
-    suspense: true
+    suspense: true,
   });
   const { restaurants, lastUpdated } = data!;
   const [showToday, setShowToday] = useState(true);
@@ -35,27 +35,29 @@ export const Main: React.FC = () => {
   const onlyShowToday = !!(showToday && weekDayToday);
 
   return (
-    <main className="sans-serif">
+    <main className="Main sans-serif">
       {weekDayToday && (
         <label className="ma4 flex items-center">
           <input
             className="mr2"
             type="checkbox"
             checked={showToday}
-            onChange={() => setShowToday(show => !show)}
+            onChange={() => setShowToday((show) => !show)}
           />
           Visa endast dagens
         </label>
       )}
-      {restaurants.map((res, index) => (
-        <RestaurantView
-          key={res.name}
-          index={index}
-          restaurant={res}
-          showSingleDay={onlyShowToday}
-          weekDayToday={weekDayToday}
-        />
-      ))}
+      <div className="Grid">
+        {restaurants.map((res, index) => (
+          <RestaurantView
+            key={res.name}
+            index={index}
+            restaurant={res}
+            showSingleDay={onlyShowToday}
+            weekDayToday={weekDayToday}
+          />
+        ))}
+      </div>
 
       <div className="pt2 ma4 ">
         <small className="mid-gray">
@@ -63,7 +65,7 @@ export const Main: React.FC = () => {
           {new Date(lastUpdated).toLocaleDateString("sv-SE", {
             hour: "2-digit",
             minute: "2-digit",
-            second: "2-digit"
+            second: "2-digit",
           })}
         </small>
       </div>
