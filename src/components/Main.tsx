@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
-import useSWR from "swr";
 import { weekdays } from "../lib/lunch-fetcher/lib/utils";
 import { Restaurant } from "../lib/lunch-fetcher/types";
 import { RestaurantView } from "./Restaurant";
@@ -11,20 +10,12 @@ const getWeekday = (date: Date): string | null => {
   return weekdays[dayIndex];
 };
 
-const fetcher = (url: string) => fetch(url).then(r => r.json());
-
-const RESTAURANTS_URL = "/api/restaurants";
-
-interface RestaurantsResponse {
+interface MainProps {
   restaurants: Restaurant[];
   lastUpdated: string;
 }
 
-export const Main: React.FC = () => {
-  const { data } = useSWR<RestaurantsResponse>(RESTAURANTS_URL, fetcher, {
-    suspense: true
-  });
-  const { restaurants, lastUpdated } = data!;
+export const Main: React.VFC<MainProps> = ({ restaurants, lastUpdated }) => {
   const [showToday, setShowToday] = useState(true);
 
   useEffect(() => {
@@ -42,7 +33,7 @@ export const Main: React.FC = () => {
             className="mr2"
             type="checkbox"
             checked={showToday}
-            onChange={() => setShowToday(show => !show)}
+            onChange={() => setShowToday((show) => !show)}
           />
           Visa endast dagens
         </label>
@@ -63,7 +54,7 @@ export const Main: React.FC = () => {
           {new Date(lastUpdated).toLocaleDateString("sv-SE", {
             hour: "2-digit",
             minute: "2-digit",
-            second: "2-digit"
+            second: "2-digit",
           })}
         </small>
       </div>
