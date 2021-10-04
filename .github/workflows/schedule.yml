@@ -1,0 +1,14 @@
+name: Rebuild on schedule
+
+on:
+  schedule:
+    - cron: "1,31 0,8-11 * * *"
+
+jobs:
+  curl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy
+        uses: wei/curl@master
+        with:
+          args: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
