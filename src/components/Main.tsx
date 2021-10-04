@@ -13,30 +13,30 @@ const getWeekday = (date: Date): string | null => {
 interface MainProps {
   restaurants: Restaurant[];
   lastUpdated: string;
+  showToday: boolean;
 }
 
-export const Main: React.VFC<MainProps> = ({ restaurants, lastUpdated }) => {
-  const [showToday, setShowToday] = useState(true);
-
-  useEffect(() => {
-    console.log(new Date(lastUpdated));
-  }, [lastUpdated]);
-
+export const Main: React.VFC<MainProps> = ({
+  showToday,
+  restaurants,
+  lastUpdated,
+}) => {
   const weekDayToday = getWeekday(new Date());
   const onlyShowToday = !!(showToday && weekDayToday);
 
   return (
     <main className="sans-serif">
-      {weekDayToday && (
-        <label className="ma4 flex items-center">
-          <input
-            className="mr2"
-            type="checkbox"
-            checked={showToday}
-            onChange={() => setShowToday((show) => !show)}
-          />
-          Visa endast dagens
-        </label>
+      {onlyShowToday ? (
+        <a
+          href="/week"
+          className="mr2 db blue no-underline underline-hover pa4"
+        >
+          Visa veckans meny
+        </a>
+      ) : (
+        <a href="/" className="mr2 db blue no-underline underline-hover pa4">
+          Visa endast dagens meny
+        </a>
       )}
       {restaurants.map((res, index) => (
         <RestaurantView
