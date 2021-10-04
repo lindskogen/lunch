@@ -1,24 +1,24 @@
-import "isomorphic-unfetch";
+import "unfetch";
 import * as cheerio from "cheerio";
 
 import {
   url as seasideUrl,
-  parseHtml as parseSeaside
+  parseHtml as parseSeaside,
 } from "./restaurants/seaside";
 import { url as hopsUrl, parseHtml as parseHops } from "./restaurants/hops";
 import {
   url as barabicuUrl,
-  parseHtml as parseBarabicu
+  parseHtml as parseBarabicu,
 } from "./restaurants/barabicu";
 import {
   url as schnitzelplatzUrl,
-  parseHtml as parseSchnitzelplatz
+  parseHtml as parseSchnitzelplatz,
 } from "./restaurants/schnitzelplatz";
 import { Restaurant } from "./types";
 import {
   fetchMeals,
   parseResponse as parseBangkok,
-  url as bangkokUrl
+  url as bangkokUrl,
 } from "./restaurants/bangkok";
 
 const getEmptyRestaurantFallback = (name: string, url: string) => (
@@ -28,14 +28,14 @@ const getEmptyRestaurantFallback = (name: string, url: string) => (
   return {
     name,
     url,
-    days: []
+    days: [],
   };
 };
 
 const fetchHTML = (url: string) =>
   fetch(url)
-    .then(r => r.text())
-    .then(r => cheerio.load(r));
+    .then((r) => r.text())
+    .then((r) => cheerio.load(r));
 
 const getAllRestaurants = (): Promise<Restaurant[]> => {
   const hops = fetchHTML(hopsUrl)
