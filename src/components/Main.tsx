@@ -1,14 +1,7 @@
 import * as React from "react";
-import { useEffect, useState } from "react";
-import { weekdays } from "../lib/lunch-fetcher/lib/utils";
+import { getWeekday } from "../lib/lunch-fetcher/lib/utils";
 import { Restaurant } from "../lib/lunch-fetcher/types";
 import { RestaurantView } from "./Restaurant";
-
-const getWeekday = (date: Date): string | null => {
-  const dayIndex = date.getDay();
-
-  return weekdays[dayIndex];
-};
 
 interface MainProps {
   restaurants: Restaurant[];
@@ -38,15 +31,22 @@ export const Main: React.VFC<MainProps> = ({
           Visa endast dagens meny
         </a>
       )}
-      {restaurants.map((res, index) => (
-        <RestaurantView
-          key={res.name}
-          index={index}
-          restaurant={res}
-          showSingleDay={onlyShowToday}
-          weekDayToday={weekDayToday}
-        />
-      ))}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(640px, 1fr))",
+        }}
+      >
+        {restaurants.map((res, index) => (
+          <RestaurantView
+            key={res.name}
+            index={index}
+            restaurant={res}
+            showSingleDay={onlyShowToday}
+            weekDayToday={weekDayToday}
+          />
+        ))}
+      </div>
 
       <div className="pt2 ma4 ">
         <small className="mid-gray">

@@ -8,7 +8,7 @@ export const weekdays = [
   "onsdag",
   "torsdag",
   "fredag",
-  null
+  null,
 ];
 
 export const isWeekday = (text: string): text is WeekDay =>
@@ -48,3 +48,9 @@ export const mapDayNameToWeekDay = (str: string): WeekDay | undefined => {
     return undefined;
   }
 };
+
+export function getWeekday(date: Date): string | null {
+  let dayIndex = date.getDay();
+
+  return weekdays[dayIndex];
+}
