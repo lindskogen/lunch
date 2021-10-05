@@ -1,5 +1,6 @@
 ---
-import {Main} from '../components/Main.tsx'
+import Main from '../components/Main.astro'
+import {RestaurantsList} from '../components/RestaurantsList.tsx'
 import { fetchAll } from "../lib/lunch-fetcher/fetch-restaurants";
 
 export async function getStaticPaths() {
@@ -29,6 +30,8 @@ const { restaurants, showToday } = Astro.props;
         <title>Stena Lunch</title>
     </head>
     <body>
-        <Main showToday={showToday} restaurants={restaurants} lastUpdated={lastUpdated} />
+        <Main showToday={showToday} lastUpdated={lastUpdated}>
+          <RestaurantsList restaurants={restaurants} showToday={showToday} />
+        </Main>
     </body>
 </html>
