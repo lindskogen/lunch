@@ -2,7 +2,7 @@ name: Rebuild on schedule
 
 on:
   schedule:
-    - cron: "1,31 0,8-11 * * *"
+    - cron: "1,31 0,6-9 * * *"
 
 jobs:
   curl:
