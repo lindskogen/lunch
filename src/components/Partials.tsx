@@ -1,3 +1,4 @@
+import React from "react";
 import { getWeekday } from "../lib/lunch-fetcher/lib/utils";
 
 export const TopLink = ({ showToday }: { showToday: boolean }) => {
