@@ -1,4 +1,3 @@
-import React from "react";
 import { getWeekday } from "../lib/lunch-fetcher/lib/utils";
 
 export const TopLink = ({ showToday }: { showToday: boolean }) => {
@@ -19,16 +18,3 @@ export const TopLink = ({ showToday }: { showToday: boolean }) => {
     );
   }
 };
-
-export const DateFooter = ({ lastUpdated }: { lastUpdated: string }) => (
-  <div className="pt2 ma4">
-    <small className="mid-gray">
-      Uppdaterat{" "}
-      {new Date(lastUpdated).toLocaleDateString("sv-SE", {
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-      })}
-    </small>
-  </div>
-);
