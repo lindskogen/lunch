@@ -17,6 +17,7 @@ jobs:
         run: |
           yarn
           yarn test
+          yarn astro check
           yarn build
         env:
           CI: true
