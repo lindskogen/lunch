@@ -11,9 +11,9 @@ describe("seaside", () => {
       expect(result).toMatchSnapshot();
     });
 
-    it("should have 6 foods per day", () => {
+    it("should have 3 foods per day", () => {
       result.days.forEach((day) => {
-        expect(day.items).toHaveLength(6);
+        expect(day.items).toHaveLength(3);
       });
     });
 

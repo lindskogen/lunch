@@ -4,14 +4,16 @@ export interface Restaurant {
   days: RestaurantDayMenu[];
 }
 
-export type WeekDay =
-  | "Söndag"
-  | "Måndag"
-  | "Tisdag"
-  | "Onsdag"
-  | "Torsdag"
-  | "Fredag"
-  | "Lördag";
+export enum WeekDay {
+  Sunday = "Söndag",
+  Monday = "Måndag",
+  Tuesday = "Tisdag",
+  Wednesday = "Onsdag",
+  Thursday = "Torsdag",
+  Friday = "Fredag",
+  Saturday = "Lördag"
+}
+
 
 export interface RestaurantDayMenu {
   wday: WeekDay;

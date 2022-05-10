@@ -6,28 +6,16 @@ Object {
     Object {
       "items": Array [
         Object {
-          "name": "Isterband med dillstuvad potatis, picklade rödbetor och hemgjord senap",
-          "title": "DAGENS 1",
+          "name": "Grillad andouillekorv serveras med sötpotatis och chiliaioli samt rostad potatis och grönsaker",
+          "title": "GÅRD",
         },
         Object {
-          "name": "Het chiligryta med nötfärs, bönor och paprika samt picklad rödlök, crème fraiche och ris",
-          "title": "DAGENS 2",
+          "name": "Fiskgryta på kummel, torsk, lax, blåmusslor och rotfrukter serveras med potatisstomp",
+          "title": "HAV",
         },
         Object {
-          "name": "Dagens pasta",
-          "title": "PASTA",
-        },
-        Object {
-          "name": "Rödbetsgryta med fullkornsbulgur och chèvreklick",
-          "title": "VEGETARISK",
-        },
-        Object {
-          "name": "Välj ditt eget protein och plocka resten ifrån vår stora salladsbuffé",
-          "title": "SALLAD",
-        },
-        Object {
-          "name": "Hamburgare med ost, pommes frites, saltgurka och tillbehör",
-          "title": "GRILL",
+          "name": "Tofu Tikka masala serveras med naanbröd, mangochutney och basmatiris",
+          "title": "ÄNG",
         },
       ],
       "wday": "Måndag",
@@ -35,28 +23,16 @@ Object {
     Object {
       "items": Array [
         Object {
-          "name": "Stekt fläsk med bruna bönor eller löksås serveras med kokt potatis",
-          "title": "DAGENS 1",
+          "name": "Linguine med nattbakad högrev, basilika och soltorkad tomatsås samt riven parmesan",
+          "title": "GÅRD",
         },
         Object {
-          "name": "Mandel och fröpanerad sejfilé med curryrostad blomkål och spenatsallad",
-          "title": "DAGENS 2",
+          "name": "Örtstekt kummelfilé serveras med dill och räksås, kokt potatis och blomkålspuré",
+          "title": "HAV",
         },
         Object {
-          "name": "Dagens pasta",
-          "title": "PASTA",
-        },
-        Object {
-          "name": "Rödbetsgryta med fullkornsbulgur och chèvreklick",
-          "title": "VEGETARISK",
-        },
-        Object {
-          "name": "Välj ditt eget protein och plocka resten ifrån vår stora salladsbuffé",
-          "title": "SALLAD",
-        },
-        Object {
-          "name": "Hamburgare med ost, pommes frites, saltgurka och tillbehör",
-          "title": "GRILL",
+          "name": "Tofu Tikka masala serveras med naanbröd, mangochutney och basmatiris",
+          "title": "ÄNG",
         },
       ],
       "wday": "Tisdag",
@@ -64,28 +40,16 @@ Object {
     Object {
       "items": Array [
         Object {
-          "name": "Panerad torskfilé med skarpsås, dillslungad potatis och citron",
-          "title": "DAGENS 1",
+          "name": "Ostgratinerat kycklingbröst serveras med basilikasås och pilaffris samt ruccola",
+          "title": "GÅRD",
         },
         Object {
-          "name": "Adobokryddad kyckling med karibisk bönsallad och rostad potatis",
-          "title": "DAGENS 2",
+          "name": "Pankopanerad sejfilé serveras med gochujangmajonnäs, rostad sesam och jasminris",
+          "title": "HAV",
         },
         Object {
-          "name": "Dagens pasta",
-          "title": "PASTA",
-        },
-        Object {
-          "name": "Rödbetsgryta med fullkornsbulgur och chèvreklick",
-          "title": "VEGETARISK",
-        },
-        Object {
-          "name": "Välj ditt eget protein och plocka resten ifrån vår stora salladsbuffé",
-          "title": "SALLAD",
-        },
-        Object {
-          "name": "Hamburgare med ost, pommes frites, saltgurka och tillbehör",
-          "title": "GRILL",
+          "name": "Rödbetsbiff med fetaost serveras med rostad potatis och persiljekräm på färskost",
+          "title": "ÄNG",
         },
       ],
       "wday": "Onsdag",
@@ -93,28 +57,16 @@ Object {
     Object {
       "items": Array [
         Object {
-          "name": "Ärtsoppa med fläsk och korv samt pannkakor med sylt och vispad grädde",
-          "title": "DAGENS 1",
+          "name": "Pannbiff serveras med löksky, persilja, rårörda lingon, saltgurka och potatispuré",
+          "title": "GÅRD",
         },
         Object {
-          "name": "Nötfärsbiff med karamelliserad lök, rödvinssås, gelé och stekt potatis",
-          "title": "DAGENS 2",
+          "name": "Potatis och purjolökssoppa med krutonger och bacon samt pannkakor med sylt och grädde",
+          "title": "SOPPA",
         },
         Object {
-          "name": "Dagens pasta",
-          "title": "PASTA",
-        },
-        Object {
-          "name": "Rostade grönsaker med libanesisk kryddning, matvete och hummus",
-          "title": "VEGETARISK",
-        },
-        Object {
-          "name": "Välj ditt eget protein och plocka resten ifrån vår stora salladsbuffé",
-          "title": "SALLAD",
-        },
-        Object {
-          "name": "Hamburgare med ost, pommes frites, saltgurka och tillbehör",
-          "title": "GRILL",
+          "name": "Rödbetsbiff med fetaost serveras med rostad potatis och persiljekräm på färskost",
+          "title": "ÄNG",
         },
       ],
       "wday": "Torsdag",
@@ -122,28 +74,16 @@ Object {
     Object {
       "items": Array [
         Object {
-          "name": "Helstekt fläskfilé med råstekt potatis, pepparsås och haricots verts",
-          "title": "DAGENS 1",
+          "name": "Pulled porkburger serveras med BBQ-sås, coleslaw, picklad rödlök och friterad potatis",
+          "title": "GÅRD",
         },
         Object {
-          "name": "Panerad rödspätta med skaldjursmajonnäs, citron och dillslungad potatis",
-          "title": "DAGENS 2",
+          "name": "Ugnsbakad torskfilé serveras med citronsmörsås, haricots verts och gratinerad potatis",
+          "title": "HAV",
         },
         Object {
-          "name": "Dagens pasta",
-          "title": "PASTA",
-        },
-        Object {
-          "name": "Rostade grönsaker med libanesisk kryddning, matvete och hummus",
-          "title": "VEGETARISK",
-        },
-        Object {
-          "name": "Välj ditt eget protein och plocka resten ifrån vår stora salladsbuffé",
-          "title": "SALLAD",
-        },
-        Object {
-          "name": "Hamburgare med ost, pommes frites, saltgurka och tillbehör",
-          "title": "GRILL",
+          "name": "Ricotta och spenatfylld tortellini serveras med ratatouille och riven ost",
+          "title": "ÄNG",
         },
       ],
       "wday": "Fredag",

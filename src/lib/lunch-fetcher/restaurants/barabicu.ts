@@ -1,14 +1,14 @@
-import { isNotNull, filterMap } from "../lib/utils";
-import { FoodItem, Restaurant, WeekDay, RestaurantDayMenu } from "../types";
+import { filterMap } from "../lib/utils";
+import { Restaurant, RestaurantDayMenu, WeekDay } from "../types";
 
 export const url = "https://barabicu.se/";
 
 const weekdayTranslations: WeekDay[] = [
-  "Måndag",
-  "Tisdag",
-  "Onsdag",
-  "Torsdag",
-  "Fredag",
+  WeekDay.Monday,
+  WeekDay.Tuesday,
+  WeekDay.Wednesday,
+  WeekDay.Thursday,
+  WeekDay.Friday,
 ];
 export const parseHtml = ($: CheerioStatic): Restaurant => {
   const menus = $("#todays-lunch li")

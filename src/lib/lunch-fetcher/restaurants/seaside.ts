@@ -1,5 +1,10 @@
 import * as _ from "lodash";
-import { isWeekday, isNotNull, isNotZero, filterMap } from "../lib/utils";
+import {
+  filterMap,
+  isNotZero,
+  isWeekday,
+  mapDayNameToWeekDay,
+} from "../lib/utils";
 import { Restaurant, WeekDay } from "../types";
 
 export const url = "http://seaside.kvartersmenyn.se/";
@@ -7,10 +12,10 @@ export const url = "http://seaside.kvartersmenyn.se/";
 export const parseHtml = ($: CheerioStatic): Restaurant => {
   const menus = $(".day .meny")
     .toArray()
-    .map(item => {
+    .map((item) => {
       const allNodes = item.childNodes
-        .filter(i => i.tagName === "strong" || i.nodeValue)
-        .map(item => $(item).text());
+        .filter((i) => i.tagName === "strong" || i.nodeValue)
+        .map((item) => $(item).text());
 
       const splitIndexes = filterMap(allNodes, (text, index) =>
         isWeekday(text) ? index : null
@@ -19,34 +24,38 @@ export const parseHtml = ($: CheerioStatic): Restaurant => {
       let lastIndex = 0;
       const days = splitIndexes
         .filter(isNotZero)
-        .map(splitIndex => {
+        .map((splitIndex) => {
           const slice = allNodes.slice(lastIndex, splitIndex);
           lastIndex = splitIndex;
           return slice;
         })
         .concat([allNodes.slice(lastIndex)]);
 
-      return days
-        .filter(([wday]) => isWeekday(wday))
-        .map(([wday, ...foods]) => {
-          const foodsRegex = /^([A-Ö]+( [0-9])?) ?[\n :]([^0-9:\n]+)/gm;
+      return filterMap(days, ([wday, ...foods]) => {
+        const weekday = mapDayNameToWeekDay(wday);
 
-          const allFoodsForWeekDay = foods.join("\n");
+        if (!weekday) {
+          return null;
+        }
 
-          const parsedFoods = [];
+        const foodsRegex = /^([A-Ö]+( [0-9])?) ?[\n :]([^0-9:\n]+)/gm;
 
-          let res = foodsRegex.exec(allFoodsForWeekDay);
-          while (res !== null) {
-            const [, title, , name] = res;
-            parsedFoods.push({ title, name: name.trim() });
-            res = foodsRegex.exec(allFoodsForWeekDay);
-          }
+        const allFoodsForWeekDay = foods.join("\n");
 
-          return {
-            wday: wday as WeekDay,
-            items: parsedFoods
-          };
-        });
+        const parsedFoods = [];
+
+        let res = foodsRegex.exec(allFoodsForWeekDay);
+        while (res !== null) {
+          const [, title, , name] = res;
+          parsedFoods.push({ title, name: name.trim() });
+          res = foodsRegex.exec(allFoodsForWeekDay);
+        }
+
+        return {
+          wday: weekday,
+          items: parsedFoods,
+        };
+      });
     });
 
   return { name: "Seaside", url, days: _.flatten(menus) };

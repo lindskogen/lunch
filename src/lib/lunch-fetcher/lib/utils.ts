@@ -34,15 +34,15 @@ export const filterMap = <T, U>(
 
 export const mapDayNameToWeekDay = (str: string): WeekDay | undefined => {
   if (str.match(/m[åa]ndag/i)) {
-    return "Måndag";
+    return WeekDay.Monday;
   } else if (str.match(/tisdag/i)) {
-    return "Tisdag";
+    return WeekDay.Tuesday;
   } else if (str.match(/onsdag/i)) {
-    return "Onsdag";
+    return WeekDay.Wednesday;
   } else if (str.match(/torsdag/i)) {
-    return "Torsdag";
+    return WeekDay.Thursday;
   } else if (str.match(/fredag/i)) {
-    return "Fredag";
+    return WeekDay.Friday;
   } else {
     console.log("Unmatched day name", str);
     return undefined;
