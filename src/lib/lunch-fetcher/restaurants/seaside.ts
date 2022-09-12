@@ -1,4 +1,4 @@
-import * as _ from "lodash";
+import { flatten } from "lodash-es";
 import {
   filterMap,
   isNotZero,
@@ -58,5 +58,5 @@ export const parseHtml = ($: CheerioStatic): Restaurant => {
       });
     });
 
-  return { name: "Seaside", url, days: _.flatten(menus) };
+  return { name: "Seaside", url, days: flatten(menus) };
 };

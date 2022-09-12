@@ -1,4 +1,4 @@
-import * as _ from "lodash";
+import {take, drop} from "lodash-es";
 import { Restaurant, FoodItem, RestaurantDayMenu, WeekDay } from "../types";
 
 export const url = "https://schnitzelplatz.se/lunch/";
@@ -27,13 +27,13 @@ export const parseHtml = ($: CheerioStatic): Restaurant => {
 
   const numWeekItems = menus.length - 5;
 
-  const weekItems: FoodItem[] = _.take(menus, numWeekItems).map(
+  const weekItems: FoodItem[] = take(menus, numWeekItems).map(
     ([title, name]) => ({
       title: title.toUpperCase(),
       name
     })
   );
-  const dayItems = _.drop(menus, numWeekItems);
+  const dayItems = drop(menus, numWeekItems);
 
   const days: RestaurantDayMenu[] = dayItems.map(([day, name]) => ({
     wday: day as WeekDay,

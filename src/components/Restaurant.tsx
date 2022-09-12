@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Restaurant, RestaurantDayMenu } from "../lib/lunch-fetcher/types";
-import { shuffle } from "lodash";
+import { shuffle } from "lodash-es";
 
 interface Props {
   index: number;

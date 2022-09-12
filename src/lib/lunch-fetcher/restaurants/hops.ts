@@ -1,4 +1,4 @@
-import * as _ from "lodash";
+import { flatMap, includes, takeWhile, flatten } from "lodash-es";
 import { id, isNotNull, isNotZero, isWeekday } from "../lib/utils";
 import { FoodItem, Restaurant, WeekDay } from "../types";
 
@@ -8,7 +8,7 @@ export const parseHtml = ($: CheerioStatic): Restaurant => {
   const menus = $("#Veckansmeny")
     .toArray()
     .map(item => {
-      const allNodes = _.flatMap(item.childNodes, node =>
+      const allNodes = flatMap(item.childNodes, node =>
         $(node)
           .text()
           .trim()
@@ -21,9 +21,9 @@ export const parseHtml = ($: CheerioStatic): Restaurant => {
         text => text === "Veckans rätter"
       );
 
-      const weekItems: FoodItem[] = _.takeWhile(
+      const weekItems: FoodItem[] = takeWhile(
         allNodes.slice(weekMealsStartIndex + 1),
-        text => !_.includes(text, " kaffe ")
+        text => !includes(text, " kaffe ")
       ).map(food => {
         const foodname = food.trim();
         const matches = foodname.split(':');
@@ -57,7 +57,7 @@ export const parseHtml = ($: CheerioStatic): Restaurant => {
 
           return {
             wday: wday as WeekDay,
-            items: _.takeWhile(
+            items: takeWhile(
               items,
               ({ name }) => name !== "Veckans rätter"
             ).concat(weekItems)
@@ -65,5 +65,5 @@ export const parseHtml = ($: CheerioStatic): Restaurant => {
         });
     });
 
-  return { name: "Hops", url, days: _.flatten(menus) };
+  return { name: "Hops", url, days: flatten(menus) };
 };

@@ -1,7 +1,7 @@
-import { RestaurantData, Item } from "./bangkok_types";
-import { RestaurantDayMenu, WeekDay, FoodItem, Restaurant } from "../types";
-import { groupBy, startCase, take } from "lodash";
+import { Item, RestaurantData } from "./bangkok_types";
+import { groupBy, take } from "lodash-es";
 import { filterMap, mapDayNameToWeekDay } from "../lib/utils";
+import { RestaurantDayMenu, FoodItem, Restaurant } from "../types";
 
 const QUERY = `
 query Query($clientId: String!) {
