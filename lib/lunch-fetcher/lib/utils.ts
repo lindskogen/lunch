@@ -50,6 +50,8 @@ export const mapDayNameToWeekDay = (str: string): WeekDay | undefined => {
 };
 
 export function getWeekday(date: Date): string | null {
+  isWeekday
+
   let dayIndex = date.getDay();
 
   return weekdays[dayIndex];

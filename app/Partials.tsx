@@ -1,5 +1,6 @@
 import React from "react";
 import { getWeekday } from "../lib/lunch-fetcher/lib/utils";
+import Link from "next/link";
 
 export const TopLink = ({ showToday }: { showToday: boolean }) => {
   const weekDayToday = getWeekday(new Date());
@@ -7,15 +8,18 @@ export const TopLink = ({ showToday }: { showToday: boolean }) => {
 
   if (onlyShowToday) {
     return (
-      <a href="/week" className="mr2 db blue no-underline underline-hover pa4">
+      <Link
+        href="/week"
+        className="mr2 db blue no-underline underline-hover pa4"
+      >
         Visa veckans meny
-      </a>
+      </Link>
     );
   } else {
     return (
-      <a href="/" className="mr2 db blue no-underline underline-hover pa4">
+      <Link href="/" className="mr2 db blue no-underline underline-hover pa4">
         Visa endast dagens meny
-      </a>
+      </Link>
     );
   }
 };

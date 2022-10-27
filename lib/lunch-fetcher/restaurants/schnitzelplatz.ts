@@ -1,5 +1,6 @@
 import {take, drop} from "lodash-es";
 import { Restaurant, FoodItem, RestaurantDayMenu, WeekDay } from "../types";
+import { CheerioAPI } from "cheerio";
 
 export const url = "https://schnitzelplatz.se/lunch/";
 
@@ -12,8 +13,8 @@ const firstPartOfSplitOrAll = (str: string, split: string): string => {
   }
 };
 
-export const parseHtml = ($: CheerioStatic): Restaurant => {
-  const menus = $(".foodmenu h4")
+export const parseHtml = ($: CheerioAPI): Restaurant => {
+  const menus = $(".introbox__container h4")
     .get()
     .map(node => [
       $(node).text().trim(),

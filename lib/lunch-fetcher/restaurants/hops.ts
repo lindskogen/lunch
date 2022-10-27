@@ -1,10 +1,11 @@
-import { flatMap, includes, takeWhile, flatten } from "lodash-es";
+import { flatMap, flatten, includes, takeWhile } from "lodash-es";
 import { id, isNotNull, isNotZero, isWeekday } from "../lib/utils";
 import { FoodItem, Restaurant, WeekDay } from "../types";
+import { CheerioAPI } from "cheerio";
 
-export const url = "http://www.hopsbar.se/";
+export const url = "https://www.hopsbar.se/";
 
-export const parseHtml = ($: CheerioStatic): Restaurant => {
+export const parseHtml = ($: CheerioAPI): Restaurant => {
   const menus = $("#Veckansmeny")
     .toArray()
     .map(item => {
@@ -23,7 +24,7 @@ export const parseHtml = ($: CheerioStatic): Restaurant => {
 
       const weekItems: FoodItem[] = takeWhile(
         allNodes.slice(weekMealsStartIndex + 1),
-        text => !includes(text, " kaffe ")
+        text => !includes(text, "I lunchen ingår")
       ).map(food => {
         const foodname = food.trim();
         const matches = foodname.split(':');

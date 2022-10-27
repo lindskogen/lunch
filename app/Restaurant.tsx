@@ -2,9 +2,8 @@ import * as React from "react";
 import { Restaurant, RestaurantDayMenu } from "../lib/lunch-fetcher/types";
 import { shuffle } from "lodash-es";
 
-interface Props {
+interface Props extends Restaurant {
   index: number;
-  restaurant: Restaurant;
   showSingleDay: boolean;
   weekDayToday: string | null;
 }
@@ -35,12 +34,14 @@ const renderDay = (hideDay: boolean, { wday, items }: RestaurantDayMenu) => (
   </React.Fragment>
 );
 
-export const RestaurantView: React.FC<Props> = ({
+export const RestaurantView = ({
   index,
-  restaurant: { days, name, url },
   showSingleDay,
   weekDayToday,
-}) => {
+  name,
+  url,
+  days,
+}: Props) => {
   const weekDayToRender =
     showSingleDay &&
     days.find(({ wday }) => wday.toLowerCase() === weekDayToday);
