@@ -1,20 +1,16 @@
 import { flatten } from "lodash-es";
-import {
-  filterMap,
-  isNotZero,
-  isWeekday,
-  mapDayNameToWeekDay,
-} from "../lib/utils";
-import { Restaurant, WeekDay } from "../types";
+import { filterMap, isNotZero, isWeekday, mapDayNameToWeekDay, } from "../lib/utils";
+import { Restaurant } from "../types";
+import { CheerioAPI } from "cheerio";
 
-export const url = "http://seaside.kvartersmenyn.se/";
+export const url = "https://seaside.kvartersmenyn.se/";
 
-export const parseHtml = ($: CheerioStatic): Restaurant => {
+export const parseHtml = ($: CheerioAPI): Restaurant => {
   const menus = $(".day .meny")
     .toArray()
     .map((item) => {
       const allNodes = item.childNodes
-        .filter((i) => i.tagName === "strong" || i.nodeValue)
+        .filter((i) => "tagName" in i && i.tagName === "strong" || "nodeValue" in i && i.nodeValue)
         .map((item) => $(item).text());
 
       const splitIndexes = filterMap(allNodes, (text, index) =>

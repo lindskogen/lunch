@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^1.1.2",
-    "cheerio": "1.0.0-rc.10",
+    "cheerio": "1.0.0-rc.12",
     "encoding": "0.1.13",
     "lodash-es": "4.17.21",
     "react": "^18.0.0",
